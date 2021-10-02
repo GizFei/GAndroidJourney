@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- BottomSheet样式 Start -->
+    <!-- BottomSheet动画 -->
+    <style name="YFBottomSheetAnimation" />
+    <style name="YFBottomSheetAnimation.SlideInOut">
+        <item name="android:windowEnterAnimation">@anim/bottom_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_sheet_slide_out</item>
+    </style>
+    <style name="YFBottomSheetStyle" />
+    <style name="YFBottomSheetStyle.TopRoundCorner" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_top_round_corner_16</item>
+    </style>
+    <!-- 通用。使用底部上滑、下沉动画 -->
+    <style name="YFBottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="android:windowAnimationStyle">@style/YFBottomSheetAnimation.SlideInOut</item>
+    </style>
+    <!-- 去掉背景遮罩 -->
+    <style name="YFBottomSheet.NoDim">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <!-- 顶部圆角 -->
+    <style name="YFBottomSheet.TopRoundCorner">
+        <item name="bottomSheetStyle">@style/YFBottomSheetStyle.TopRoundCorner</item>
+    </style>
+    <!-- 去掉背景遮罩 & 顶部圆角 -->
+    <style name="YFBottomSheet.NoDim.TopRoundCorner">
+        <item name="bottomSheetStyle">@style/YFBottomSheetStyle.TopRoundCorner</item>
+    </style>
+    <!-- BottomSheet样式 End-->
+
+</resources>

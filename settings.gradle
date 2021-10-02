@@ -10,3 +10,4 @@ rootProject.name = "GAndroidJourney"
 include ':app'
 include ':bottomsheet'
 include ':yfui'
+include ':ui-practice'

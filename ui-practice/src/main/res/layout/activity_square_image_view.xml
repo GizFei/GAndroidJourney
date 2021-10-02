@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            tools:context=".hencoder.viewlayout.SquareImageViewActivity">
+
+            <FrameLayout
+                android:id="@+id/fl_square"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="#DDD"
+                >
+
+                <com.giz.android.practice.hencoder.viewlayout.SquareImageView
+                    android:id="@+id/iv_square"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_star_sky"
+                    android:scaleType="centerCrop"
+                    />
+
+            </FrameLayout>
+
+            <com.giz.android.practice.widget.CustomSeekBar
+                android:id="@+id/sb_width"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                />
+
+            <com.giz.android.practice.widget.CustomSeekBar
+                android:id="@+id/sb_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                />
+
+            <com.giz.android.practice.widget.ColorPaintingView
+                android:id="@+id/color_painting_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                app:cpv_cols="8"
+                app:cpv_rows="5"
+                app:cpv_blockHeight="48dp"
+                app:cpv_gapY="48dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</layout>

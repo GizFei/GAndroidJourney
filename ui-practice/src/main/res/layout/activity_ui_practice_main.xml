@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UiPracticeMainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_draw_basics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义视图-绘制基础"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/btn_draw_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义视图-drawText相关"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/btn_square_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义视图-SquareImageView"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/btn_paint_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HenCoder自定义View2-Paint练习"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/btn_draw_text_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HenCoder自定义View3-drawText练习"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/btn_canvas_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HenCoder自定义View4-Canvas对绘制的辅助"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                android:id="@+id/btn_window_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WindowTestActivity"
+                android:onClick="@{onClickListener}"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

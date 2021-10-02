@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorPaintingView">
+        <attr name="cpv_cols" format="integer" />
+        <attr name="cpv_rows" format="integer" />
+        <attr name="cpv_blockHeight" format="dimension" />
+        <attr name="cpv_gapX" format="dimension" />
+        <attr name="cpv_gapY" format="dimension" />
+    </declare-styleable>
+</resources>

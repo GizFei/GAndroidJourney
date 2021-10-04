@@ -42,7 +42,7 @@ dependencies {
 
     implementation "com.google.android.material:material:${google_android_material_version}"
 
-    implementation 'com.orhanobut:logger:2.2.0'
+    implementation project(":yfutility")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

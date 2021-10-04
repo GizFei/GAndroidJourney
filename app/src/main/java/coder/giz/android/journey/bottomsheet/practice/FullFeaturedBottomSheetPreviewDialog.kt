@@ -8,7 +8,7 @@ import coder.giz.android.bottomsheet.util.BottomSheetOptions
 import coder.giz.android.bottomsheet.util.logBottomSheet
 import coder.giz.android.journey.R
 import coder.giz.android.journey.databinding.LayoutFullFeaturedBottomSheetBinding
-import coder.giz.android.yfui.yfutility.util.logLifecycle
+import coder.giz.android.yfutility.util.logLifecycle
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 

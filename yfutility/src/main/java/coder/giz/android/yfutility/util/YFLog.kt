@@ -1,4 +1,4 @@
-package coder.giz.android.yfui.yfutility.util
+package coder.giz.android.yfutility.util
 
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger

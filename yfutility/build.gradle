@@ -1,20 +1,19 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 android {
     compileSdk ANDROID_COMPILE_SDK_VERSION as int
 
     defaultConfig {
-        applicationId "coder.giz.android.journey"
         minSdk ANDROID_MIN_SDK_VERSION as int
         targetSdk ANDROID_TARGET_SDK_VERSION as int
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,9 +29,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        dataBinding = true
-    }
 }
 
 dependencies {
@@ -42,9 +38,7 @@ dependencies {
 
     implementation "com.google.android.material:material:${google_android_material_version}"
 
-    implementation project(":bottomsheet")
-    implementation project(":yfui")
-    implementation project(":yfutility")
+    implementation 'com.orhanobut:logger:2.2.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

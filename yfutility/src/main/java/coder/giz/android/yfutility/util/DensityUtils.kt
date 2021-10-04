@@ -1,4 +1,4 @@
-package coder.giz.android.yfui.yfutility.util
+package coder.giz.android.yfutility.util
 
 import android.content.Context
 import android.util.TypedValue

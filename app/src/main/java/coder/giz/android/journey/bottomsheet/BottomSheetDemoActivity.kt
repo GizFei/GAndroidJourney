@@ -1,18 +1,22 @@
 package coder.giz.android.journey.bottomsheet
 
-import android.content.Intent
 import android.util.TypedValue
 import coder.giz.android.bottomsheet.util.BottomSheetOptions
 import coder.giz.android.journey.R
 import coder.giz.android.journey.bottomsheet.practice.FullFeaturedBottomSheetDialog
 import coder.giz.android.journey.bottomsheet.practice.FullFeaturedBottomSheetPreviewDialog
 import coder.giz.android.journey.bottomsheet.practice.FullFeaturedBottomSheetPreviewFragment
-import coder.giz.android.journey.databinding.ActivityBottomSheetMainBinding
+import coder.giz.android.journey.databinding.ActivityBottomSheetDemoBinding
 import coder.giz.android.yfui.base.DataBindingBaseActivity
 
-class BottomSheetMainActivity : DataBindingBaseActivity<ActivityBottomSheetMainBinding>() {
+/**
+ * BottomSheet 样例演示页面。包含；
+ * · 作为 Dialog 的 BottomSheet
+ * · 作为 Fragment 的 BottomSheet
+ */
+class BottomSheetDemoActivity : DataBindingBaseActivity<ActivityBottomSheetDemoBinding>() {
 
-    override fun getLayoutId(): Int = R.layout.activity_bottom_sheet_main
+    override fun getLayoutId(): Int = R.layout.activity_bottom_sheet_demo
 
     override fun initView() {
         mBinding.btnFullFeaturedDialog.setOnClickListener {
@@ -134,7 +138,7 @@ class BottomSheetMainActivity : DataBindingBaseActivity<ActivityBottomSheetMainB
     }
 
     private fun gotoPreviewFragmentActivity() {
-        BottomSheetFragmentActivity::class.navigate()
+        BottomSheetFragmentDemoActivity::class.navigate()
     }
 
     protected val Int.dp: Int get() =

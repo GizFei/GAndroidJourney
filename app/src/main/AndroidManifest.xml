@@ -18,10 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".bottomsheet.BottomSheetMainActivity" />
-        <activity android:name=".bottomsheet.BottomSheetFragmentActivity" />
-
+        <activity android:name=".bottomsheet.BottomSheetDemoActivity" />
+        <activity android:name=".bottomsheet.BottomSheetFragmentDemoActivity" />
+        <activity
+            android:name=".yfui.dialog.BottomPopupDialogFragmentDemoActivity"
+            android:theme="@style/Theme.YFUi.NoActionBar"
+            android:exported="true" />
     </application>
 
 </manifest>

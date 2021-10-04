@@ -1,4 +1,4 @@
-package coder.giz.android.yfui.utility.util
+package coder.giz.android.yfui.yfutility.util
 
 import android.app.Activity
 import androidx.fragment.app.Fragment

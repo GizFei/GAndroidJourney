@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/drawable/bg_gradient_purple_to_pink.xml" value="0.21296296296296297" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/drawable/bg_round_corner_outline.xml" value="0.2111111111111111" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/layout/activity_bottom_popup_dialog_fragment_demo.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/layout/activity_bottom_sheet_fragment.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/layout/activity_bottom_sheet_fragment_demo.xml" value="0.18981481481481483" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/layout/activity_bottom_sheet_main.xml" value="0.16666666666666666" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/layout/activity_main.xml" value="0.16111111111111112" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/layout/item_main_nav_item.xml" value="0.3333333333333333" />
@@ -14,6 +16,9 @@
         <entry key="..\:/AndroidProjects/GAndroidJourney/bottomsheet/src/main/res/drawable/bg_top_round_corner_16.xml" value="0.21296296296296297" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/ui-practice/src/main/res/layout/activity_ui_practice_main.xml" value="0.18796296296296297" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/ui-practice/src/main/res/layout/activity_window_test.xml" value="0.18796296296296297" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/yfui/src/main/res/drawable/bg_round_corner_outline.xml" value="0.23796296296296296" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/yfui/src/main/res/drawable/bg_round_corner_top_16.xml" value="0.23796296296296296" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/yfui/src/main/res/layout/fragment_bottom_dialog.xml" value="0.18796296296296297" />
       </map>
     </option>
   </component>

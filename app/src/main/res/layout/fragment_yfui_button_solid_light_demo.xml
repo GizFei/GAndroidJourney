@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Primary"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/primary"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Primary"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/primary"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Success"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/primary"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Success"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/success"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Info"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/info"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Info"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/info"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Warning"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/warning"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Warning"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/warning"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Error"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/error"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.SolidLight.Error"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/error"
+                android:enabled="false"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

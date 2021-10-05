@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Primary"
+                android:id="@+id/btn_primary"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/primary"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Primary"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/primary"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Success"
+                android:id="@+id/btn_success"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/success"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Success"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/success"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_info"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/info"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/info"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Warning"
+                android:id="@+id/btn_warning"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/warning"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Warning"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/warning"
+                android:enabled="false"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Error"
+                android:id="@+id/btn_error"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/error"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Error"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/error"
+                android:enabled="false"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

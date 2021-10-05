@@ -11,4 +11,52 @@
     <color name="gray">#CCCCCC</color>
     <color name="light_gray">#EEEEEE</color>
     <color name="dark_gray">#888888</color>
+    <color name="transparent">#00FFFFFF</color>
+    
+    <color name="primary_normal">#7957D5</color>
+    <color name="primary_normal_24">#3D7957D5</color>
+    <color name="primary_light">#DfD7F5</color>
+    <color name="primary_dark">#684BB8</color>
+    <color name="primary_disabled">#B0A2D5</color>
+    <color name="primary_light_light">#EEEEFE</color>
+    <color name="primary_light_accent">#B8B8FD</color>
+    <color name="primary_text">#5524DB</color>
+
+    <color name="success_normal">#48C78E</color>
+    <color name="success_normal_24">#3D48C78E</color>
+    <color name="success_light">#D3F2E4</color>
+    <color name="success_dark">#3BA374</color>
+    <color name="success_disabled">#97C7B2</color>
+    <color name="success_light_light">#EFFAF5</color>
+    <color name="success_light_accent">#A1FAD1</color>
+    <color name="success_text">#247953</color>
+
+    <color name="info_normal">#3E8ED0</color>
+    <color name="info_normal_24">#3D3E8ED0</color>
+    <color name="info_light">#D1E4F4</color>
+    <color name="info_dark">#377DB8</color>
+    <color name="info_disabled">#9EB9D0</color>
+    <color name="info_light_light">#EFF5FB</color>
+    <color name="info_light_accent">#A1CEFB</color>
+    <color name="info_text">#296FA8</color>
+
+    <color name="warning_normal">#FFE08A</color>
+    <color name="warning_normal_24">#3DFFE08A</color>
+    <color name="warning_light">#FFF8E3</color>
+    <color name="warning_dark">#FFD45C</color>
+    <color name="warning_disabled">#FFEFC2</color>
+    <color name="warning_light_light">#FFFAEB</color>
+    <color name="warning_light_accent">#FFEBAD</color>
+    <color name="warning_text_normal">#4C4329</color>
+    <color name="warning_text_light">#946C14</color>
+
+    <color name="error_normal">#F14668</color>
+    <color name="error_normal_24">#3DF14668</color>
+    <color name="error_light">#FCD3DB</color>
+    <color name="error_dark">#CC3B58</color>
+    <color name="error_disabled">#E4AEB9</color>
+    <color name="error_light_light">#FEECF0</color>
+    <color name="error_light_accent">#FDB7C7</color>
+    <color name="error_text">#CC0F35</color>
+
 </resources>

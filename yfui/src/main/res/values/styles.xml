@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 样式顶级元素 -->
+    <style name="YFUi" />
+
+    <!-- Widget样式基类 -->
+    <style name="YFUi.Widget" />
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".yfui.button.YFUiButtonDraftActivity">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/YFUi.Widget.Button.Solid"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/yfui_btn_solid_text_color"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="@color/yfui_btn_solid_success_stroke"
+            app:backgroundTint="@color/yfui_btn_solid_success_background"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/YFUi.Widget.Button.Solid"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/yfui_btn_solid_text_color"
+            android:enabled="false"
+            app:backgroundTint="@color/yfui_btn_solid_success_background"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/YFUi.Widget.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_name"
+            android:textColor="@color/yfui_btn_outlined_primary_text_color"
+            app:rippleColor="@color/primary_normal"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/yfui_btn_outlined_primary_stroke"
+            app:backgroundTint="@color/yfui_btn_outlined_primary_background"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.BottomRightCut"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/YFUi.Widget.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/yfui_btn_outlined_primary_text_color"
+            android:enabled="false"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/yfui_btn_outlined_primary_stroke"
+            app:backgroundTint="@color/yfui_btn_outlined_primary_background"
+            />
+
+    </LinearLayout>
+
+</layout>

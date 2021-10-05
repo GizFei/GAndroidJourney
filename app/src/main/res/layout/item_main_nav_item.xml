@@ -24,23 +24,27 @@
             >
 
             <TextView
-                style="@style/YFTextView.Title3"
+                style="@style/TextAppearance.MaterialComponents.Headline3"
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{data.title}"
+                android:textSize="16sp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Title TextView"
                 />
 
             <TextView
-                style="@style/YFTextView.SubTitle1"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:id="@+id/tv_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@{data.description}"
+                android:textColor="@color/light_dark"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@id/tv_title"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 tools:text="Description TextView"

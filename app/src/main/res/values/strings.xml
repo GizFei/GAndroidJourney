@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GAndroidJourney</string>
+
+    <string name="primary">Primary</string>
+    <string name="success">Success</string>
+    <string name="info">Info</string>
+    <string name="warning">Warning</string>
+    <string name="error">Error</string>
 </resources>

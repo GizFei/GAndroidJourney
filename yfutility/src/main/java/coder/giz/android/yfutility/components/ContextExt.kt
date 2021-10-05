@@ -8,6 +8,8 @@ package coder.giz.android.yfutility.components
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -27,5 +29,21 @@ fun Context.navigate(destination: Class<out AppCompatActivity>) {
  */
 fun Context.navigate(destination: Class<out AppCompatActivity>, extras: Intent.() -> Unit) {
     this.startActivity(Intent(this, destination).apply(extras))
+}
+
+/**
+ * 弹出 [Toast]。
+ */
+fun Context.toast(text: String, isLong: Boolean = false) {
+    val duration = if (isLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+    Toast.makeText(this, text, duration).show()
+}
+
+/**
+ * 弹出 [Toast]。
+ */
+fun Context.toast(@StringRes resId: Int, isLong: Boolean = false) {
+    val duration = if (isLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+    Toast.makeText(this, resId, duration).show()
 }
 

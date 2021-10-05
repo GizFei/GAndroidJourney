@@ -21,31 +21,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- 按钮样式 -->
-    <style name="YFButton" />
-    <style name="YFButton.ActionButton">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">36dp</item>
-        <item name="android:layout_marginEnd">36dp</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="cornerRadius">36dp</item>
-    </style>
-    <style name="YFButton.Wireframe" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:background">@drawable/bg_round_corner_outline</item>
-        <item name="cornerRadius">36dp</item>
-    </style>
-    <style name="YFButton.Wireframe.FullWidth">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">36dp</item>
-        <item name="android:layout_marginEnd">36dp</item>
-    </style>
-    <style name="YFButton.Solid" parent="Widget.MaterialComponents.Button">
-        <item name="cornerRadius">36dp</item>
-    </style>
-
     <!-- Switch开关样式 -->
     <style name="YFSwitch" />
     <style name="YFSwitch.Action" parent="Widget.MaterialComponents.CompoundButton.Switch">

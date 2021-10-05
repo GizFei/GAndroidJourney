@@ -29,7 +29,7 @@
                 />
 
             <Button
-                style="@style/YFButton.Wireframe.FullWidth"
+                style="@style/YFUi.Widget.Button.Wireframe.FullWidth"
                 android:id="@+id/btn_create_account"
                 android:layout_marginBottom="16dp"
                 android:text="Create New Account"
@@ -41,7 +41,7 @@
                 />
 
             <Button
-                style="@style/YFButton.Solid"
+                style="@style/YFUi.Widget.Button.Solid"
                 android:id="@+id/btn_log_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

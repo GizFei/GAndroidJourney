@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_view_binding.xml" value="0.27025641025641023" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/fragment_view_binding.xml" value="0.25277777777777777" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/fragment_user_profile.xml" value="0.27025641025641023" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/drawable/bg_gradient_purple_to_pink.xml" value="0.21296296296296297" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/drawable/bg_round_corner_outline.xml" value="0.2111111111111111" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.28615384615384615" />

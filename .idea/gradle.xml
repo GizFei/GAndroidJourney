@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app-architecture" />
             <option value="$PROJECT_DIR$/bottomsheet" />
             <option value="$PROJECT_DIR$/ui-practice" />
             <option value="$PROJECT_DIR$/yfui" />

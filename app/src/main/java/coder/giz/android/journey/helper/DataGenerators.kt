@@ -1,10 +1,10 @@
 package coder.giz.android.journey.helper
 
-import coder.giz.android.journey.bottomsheet.BottomSheetDemoActivity
+import coder.giz.android.journey.bottomsheet_demo.BottomSheetDemoActivity
 import coder.giz.android.journey.main.MainNavItemData
-import coder.giz.android.journey.yfui.button.YFUiButtonDemoActivity
-import coder.giz.android.journey.yfui.button.YFUiButtonDraftActivity
-import coder.giz.android.journey.yfui.dialog.BottomPopupDialogFragmentDemoActivity
+import coder.giz.android.journey.yfui_demo.button.YFUiButtonDemoActivity
+import coder.giz.android.journey.yfui_demo.button.YFUiButtonDraftActivity
+import coder.giz.android.journey.yfui_demo.dialog.BottomPopupDialogFragmentDemoActivity
 
 /**
  * Created by GizFei on 2021/10/1

@@ -19,16 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".bottomsheet.BottomSheetDemoActivity" />
-        <activity android:name=".bottomsheet.BottomSheetFragmentDemoActivity" />
+        <activity android:name=".bottomsheet_demo.BottomSheetDemoActivity" />
+        <activity android:name=".bottomsheet_demo.BottomSheetFragmentDemoActivity" />
         <activity
-            android:name=".yfui.dialog.BottomPopupDialogFragmentDemoActivity"
+            android:name=".yfui_demo.dialog.BottomPopupDialogFragmentDemoActivity"
             android:theme="@style/Theme.YFUi.NoActionBar" />
         <activity
-            android:name=".yfui.button.YFUiButtonDraftActivity"
+            android:name=".yfui_demo.button.YFUiButtonDraftActivity"
             />
         <activity
-            android:name=".yfui.button.YFUiButtonDemoActivity"
+            android:name=".yfui_demo.button.YFUiButtonDemoActivity"
             />
     </application>
 

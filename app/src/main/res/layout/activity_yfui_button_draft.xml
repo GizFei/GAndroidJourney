@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".yfui.button.YFUiButtonDraftActivity">
+        tools:context=".yfui_demo.button.YFUiButtonDraftActivity">
 
         <com.google.android.material.button.MaterialButton
             style="@style/YFUi.Widget.Button.Solid"

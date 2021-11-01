@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="person"
+            type="coder.giz.android.architecture.components.uilayer.databinding.model.Person" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp"
+        app:contentPadding="12dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/YFTextView.Title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="person Info"
+                tools:ignore="HardcodedText"
+                />
+
+            <TextView
+                style="@style/YFTextView.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{`Name: ` + person.name}"
+                tools:text="person Name"
+                />
+
+            <TextView
+                style="@style/YFTextView.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{`Sex: ` + person.sex}"
+                tools:text="person Sex"
+                />
+
+            <TextView
+                style="@style/YFTextView.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text='@{"Age: " + person.age}'
+                tools:text="person Age"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

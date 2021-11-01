@@ -9,8 +9,6 @@ android {
     defaultConfig {
         minSdk ANDROID_MIN_SDK_VERSION as int
         targetSdk ANDROID_TARGET_SDK_VERSION as int
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -28,6 +26,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
     }
 }
 

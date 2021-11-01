@@ -45,6 +45,7 @@ dependencies {
     implementation project(":bottomsheet")
     implementation project(":yfui")
     implementation project(":yfutility")
+    implementation project(":app-architecture")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

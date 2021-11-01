@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="module_name">App Architecture</string>
+    <string name="intro_age">Xiao ming is %d years old.</string>
 </resources>

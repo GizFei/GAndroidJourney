@@ -2,4 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="coder.giz.android.architecture">
 
+    <application>
+        <activity
+            android:name=".AppArchitectureMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".components.uilayer.viewbinding.ViewBindingActivity"
+            />
+        <activity
+            android:name=".components.uilayer.databinding.LayoutsAndDatabindingExpressionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".components.uilayer.databinding.DataBindingWhiteboardActivity"
+            android:exported="false" />
+    </application>
+
 </manifest>

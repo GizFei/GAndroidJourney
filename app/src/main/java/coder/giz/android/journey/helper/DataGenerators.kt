@@ -1,5 +1,6 @@
 package coder.giz.android.journey.helper
 
+import coder.giz.android.architecture.AppArchitectureMainActivity
 import coder.giz.android.journey.bottomsheet_demo.BottomSheetDemoActivity
 import coder.giz.android.journey.main.MainNavItemData
 import coder.giz.android.journey.yfui_demo.button.YFUiButtonDemoActivity
@@ -32,6 +33,11 @@ object DataGenerators {
             "YFUi Button控件测试",
             YFUiButtonDemoActivity::class
         ),
+        MainNavItemData(
+            "App Architecture",
+            "App Architecture学习",
+            AppArchitectureMainActivity::class
+        )
     )
 
 }

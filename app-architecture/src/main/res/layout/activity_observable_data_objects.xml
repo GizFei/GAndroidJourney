@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="coder.giz.android.architecture.components.uilayer.databinding.ObservableDataObjectsViewModel" />
+        <variable
+            name="viewModel"
+            type="ObservableDataObjectsViewModel" />
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            tools:context=".components.uilayer.databinding.ObservableDataObjectsActivity">
+
+            <TextView
+                style="@style/YFTextView.Header"
+                android:id="@+id/header_collections"
+                android:layout_width="match_parent"
+                android:text="Observable collections"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lv_observable_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:background="@color/white"
+                app:elevation="4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:stringList="@{viewModel.operatorSystemList}"
+                app:layout_constraintTop_toBottomOf="@id/header_collections"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lv_observable_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:background="@color/white"
+                android:scrollbars="vertical"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:stringMap="@{viewModel.companyProductMap}"
+                app:layout_constraintTop_toBottomOf="@id/lv_observable_list"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Primary"
+                android:id="@+id/btn_change_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="随机修改List"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal_small"
+                android:onClick="@{onClickListener}"
+                app:layout_constraintTop_toBottomOf="@id/lv_observable_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                tools:ignore="HardcodedText"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Primary"
+                android:id="@+id/btn_change_map"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal_small"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="随机修改Map"
+                android:onClick="@{onClickListener}"
+                app:layout_constraintTop_toBottomOf="@id/lv_observable_map"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_center_horizontal"
+                tools:ignore="HardcodedText"
+                />
+
+            <TextView
+                style="@style/YFTextView.Header"
+                android:id="@+id/header_observable_object"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="Observable collections"
+                app:layout_constraintTop_toBottomOf="@id/btn_change_map"
+                tools:ignore="HardcodedText"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/YFCardView.Common"
+                android:id="@+id/cv_observable_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/header_observable_object"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        style="@style/YFTextView.Title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ObservableUser"
+                        tools:ignore="HardcodedText"
+                        />
+
+                    <TextView
+                        style="@style/YFTextView.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{`First Name: ` + viewModel.observableUser.firstName}"
+                        tools:text="First Name"
+                        />
+
+                    <TextView
+                        style="@style/YFTextView.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Last Name: ` + viewModel.observableUser.lastName}"
+                        tools:text="Last Name"
+                        />
+
+                    <TextView
+                        style="@style/YFTextView.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Age: ` + String.valueOf(viewModel.observableUser.age)}"
+                        tools:text="Age"
+                        />
+
+                    <Button
+                        style="@style/YFUi.Widget.Button.Solid.Info"
+                        android:id="@+id/btn_change_observable_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="随机改变Observable User"
+                        android:onClick="@{onClickListener}"
+                        app:layout_constraintTop_toBottomOf="@id/header_collections"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                        tools:ignore="HardcodedText"
+                        />
+
+                    <Button
+                        style="@style/YFUi.Widget.Button.Solid.Info"
+                        android:id="@+id/btn_change_whole_observable_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="改变整个Observable User\n（改变后无法观察原来对象的可观察属性，上面“随机改变”的按钮不生效）"
+                        android:onClick="@{onClickListener}"
+                        app:layout_constraintTop_toBottomOf="@id/header_collections"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                        tools:ignore="HardcodedText"
+                        />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/YFCardView.Common"
+                android:id="@+id/cv_non_observable_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_observable_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        style="@style/YFTextView.Title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NonObservableUser"
+                        tools:ignore="HardcodedText"
+                        />
+
+                    <TextView
+                        style="@style/YFTextView.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{`First Name: ` + viewModel.nonObservableUser.firstName}"
+                        tools:text="First Name"
+                        />
+
+                    <TextView
+                        style="@style/YFTextView.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Last Name: ` + viewModel.nonObservableUser.lastName}"
+                        tools:text="Last Name"
+                        />
+
+                    <TextView
+                        style="@style/YFTextView.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Age: ` + String.valueOf(viewModel.nonObservableUser.age)}"
+                        tools:text="Age"
+                        />
+
+                    <Button
+                        style="@style/YFUi.Widget.Button.Solid.Info"
+                        android:id="@+id/btn_change_non_observable_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="随机改变Non Observable User"
+                        android:onClick="@{onClickListener}"
+                        app:layout_constraintTop_toBottomOf="@id/header_collections"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                        tools:ignore="HardcodedText"
+                        />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

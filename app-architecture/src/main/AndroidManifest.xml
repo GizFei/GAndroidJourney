@@ -4,11 +4,12 @@
 
     <application>
         <activity
-            android:name=".AppArchitectureMainActivity"
+            android:name=".components.uilayer.databinding.ObservableDataObjectsActivity"
             android:exported="false" />
         <activity
-            android:name=".components.uilayer.viewbinding.ViewBindingActivity"
-            />
+            android:name=".AppArchitectureMainActivity"
+            android:exported="false" />
+        <activity android:name=".components.uilayer.viewbinding.ViewBindingActivity" />
         <activity
             android:name=".components.uilayer.databinding.LayoutsAndDatabindingExpressionsActivity"
             android:exported="false" />

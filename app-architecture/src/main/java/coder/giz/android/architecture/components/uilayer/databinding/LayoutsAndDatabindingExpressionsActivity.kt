@@ -86,8 +86,8 @@ class LayoutsAndDatabindingExpressionsViewModel : ViewModel() {
         countLiveData.value = (countLiveData.value ?: 0) + 1
     }
 
-    fun listToString(list: List<String>) {
-        list.joinToString()
+    fun listToString(list: List<String>): String {
+        return list.joinToString()
     }
 
     fun showToast(isChecked: Boolean) {

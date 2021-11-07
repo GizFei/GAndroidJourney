@@ -6,6 +6,7 @@
         <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/activity_app_architecture_main.xml" value="0.24166666666666667" />
         <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/activity_databinding_whiteboard.xml" value="0.3" />
         <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/activity_layouts_and_databinding_expressions.xml" value="0.29074074074074074" />
+        <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/activity_observable_data_objects.xml" value="0.23796296296296296" />
         <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/activity_view_binding.xml" value="0.24259259259259258" />
         <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/layout_dbuser_intro.xml" value="0.25925925925925924" />
         <entry key="..\:/Android Projects/GAndroidJourney/app-architecture/src/main/res/layout/layout_include_databinding.xml" value="0.23055555555555557" />
@@ -14,6 +15,8 @@
         <entry key="..\:/Android Projects/GAndroidJourney/app/src/main/res/layout/item_main_nav_item.xml" value="0.24166666666666667" />
         <entry key="..\:/Android Projects/GAndroidJourney/yfutility/src/main/res/layout/item_nav.xml" value="0.24166666666666667" />
         <entry key="..\:/Android Projects/GAndroidJourney/yfutility/src/main/res/layout/item_nav_header.xml" value="0.24074074074074073" />
+        <entry key="..\:/Android/SDK/platforms/android-30/data/res/layout/simple_list_item_1.xml" value="0.23796296296296296" />
+        <entry key="..\:/Android/SDK/platforms/android-30/data/res/layout/simple_list_item_2.xml" value="0.23796296296296296" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_view_binding.xml" value="0.27025641025641023" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/fragment_user_profile.xml" value="0.27025641025641023" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/fragment_view_binding.xml" value="0.25277777777777777" />

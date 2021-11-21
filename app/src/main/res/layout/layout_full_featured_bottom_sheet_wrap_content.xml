@@ -32,7 +32,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/bg_gradient_purple_to_pink"
             android:text="Login in"
-            android:textAppearance="@style/YFTextAppearance.Main"
+            android:textAppearance="@style/YFUi.TextAppearance.Main"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@id/tv_forget_password"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
 
         <TextView
             android:id="@+id/tv_forget_password"
-            style="@style/YFTextView.Main"
+            style="@style/YFUi.Widget.TextView.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"

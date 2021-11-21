@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- YFUi SeekBar 拖动条样式 -->
+    <style name="YFUi.Widget.SeekBar" />
+
+    <style name="YFUi.Widget.SeekBar.Primary">
+        <item name="android:thumb">@drawable/icon_seekbar_thumb</item>
+        <item name="android:progressDrawable">@drawable/seekbar_progress_blue</item>
+        <item name="android:maxHeight">4dp</item>
+        <item name="android:splitTrack">false</item>
+    </style>
+
+</resources>

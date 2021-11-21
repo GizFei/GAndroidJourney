@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="coder.giz.android.uidemo.popupwindow.PopupWindowDemoViewModel" />
+        <import type="coder.giz.android.uidemo.helper.GravityItemKt" />
+        <variable
+            name="viewModel"
+            type="PopupWindowDemoViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="36dp"
+            tools:context=".popupwindow.PopupWindowDemoActivity">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"
+                />
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Header"
+                android:id="@+id/tv_set_as_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="setAsDropDown"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="PopupWindow: Gravity.LEFT"
+                app:layout_constraintTop_toBottomOf="@id/tv_set_as_dropdown"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="PopupWindow: Gravity.RIGHT"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_left"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_with_arrow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="PopupWindow: 带小三角"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_right"
+                />
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Header"
+                android:id="@+id/tv_set_at_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="setAtLocation"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_with_arrow"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_at_location_gravity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:entries="@{GravityItemKt.GravityItemSpinnerEntries}"
+                android:selectedItemPosition="@={viewModel.atLocationGravity}"
+                app:layout_constraintTop_toBottomOf="@id/tv_set_at_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_at_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="PopupWindow: showAtLocation"
+                app:layout_constraintTop_toBottomOf="@id/spinner_at_location_gravity"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Headline2"
+                android:id="@+id/tv_label_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:text="X: "
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sb_location_x"
+                app:layout_constraintBottom_toBottomOf="@id/sb_location_x"
+                app:layout_constraintVertical_bias="0.6"
+                />
+
+            <coder.giz.android.yfui.seekbar.LabelSeekBar
+                android:id="@+id/sb_location_x"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_at_location"
+                app:layout_constraintStart_toEndOf="@id/tv_label_x"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Headline2"
+                android:id="@+id/tv_label_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:text="Y: "
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sb_location_y"
+                app:layout_constraintBottom_toBottomOf="@id/sb_location_y"
+                />
+
+            <coder.giz.android.yfui.seekbar.LabelSeekBar
+                android:id="@+id/sb_location_y"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/sb_location_x"
+                app:layout_constraintStart_toEndOf="@id/tv_label_y"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_location_adjustable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="PopupWindow: showAtLocation 可调整位置"
+                app:layout_constraintTop_toBottomOf="@id/sb_location_y"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Header"
+                android:id="@+id/tv_status_other_api"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="PopupWindow状态 - 其他API"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_location_adjustable"
+                />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_is_focusable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal_small"
+                android:text="isFocusable"
+                android:checked="@={viewModel.isFocusable}"
+                app:layout_constraintTop_toBottomOf="@id/tv_status_other_api"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_is_outside_touchable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal_small"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="isOutsideTouchable"
+                android:checked="@={viewModel.isOutsideTouchable}"
+                app:layout_constraintTop_toBottomOf="@id/tv_status_other_api"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_center_horizontal"
+                />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_is_touchable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal_small"
+                android:text="isTouchable"
+                android:checked="@={viewModel.isTouchable}"
+                app:layout_constraintTop_toBottomOf="@id/switch_is_focusable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_is_overlap_anchor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal_small"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="isOverlapAnchor"
+                android:checked="@={viewModel.isOverlapAnchor}"
+                app:layout_constraintTop_toBottomOf="@id/switch_is_focusable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_center_horizontal"
+                />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_is_clipping_enabled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal_small"
+                android:text="isClippingEnabled"
+                android:checked="@={viewModel.isClippingEnabled}"
+                app:layout_constraintTop_toBottomOf="@id/switch_is_touchable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_center_horizontal"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_status_other_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="测试'状态-其他API'"
+                app:layout_constraintTop_toBottomOf="@id/switch_is_clipping_enabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_dismiss_popup_window_status_other_api"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.SolidLight.Error"
+                android:id="@+id/btn_dismiss_popup_window_status_other_api"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:text="关闭"
+                app:layout_constraintTop_toTopOf="@id/btn_show_popup_window_status_other_api"
+                app:layout_constraintBottom_toBottomOf="@id/btn_show_popup_window_status_other_api"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Header"
+                android:id="@+id/tv_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="动画与过渡"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_status_other_api"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:entries="@{PopupWindowDemoViewModel.AnimationStyles}"
+                android:selectedItemPosition="@={viewModel.animationStyleIndex}"
+                app:layout_constraintTop_toBottomOf="@id/tv_animation"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="PopupWindow: 使用动画Animation"
+                app:layout_constraintTop_toBottomOf="@id/spinner_animation"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_transition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:entries="@{PopupWindowDemoViewModel.Transitions}"
+                android:selectedItemPosition="@={viewModel.transitionIndex}"
+                app:layout_constraintTop_toBottomOf="@id/btn_show_popup_window_animation"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <Button
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_show_popup_window_transition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_horizontal"
+                android:layout_marginEnd="@dimen/common_margin_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="PopupWindow: 使用过渡Transition"
+                app:layout_constraintTop_toBottomOf="@id/spinner_transition"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

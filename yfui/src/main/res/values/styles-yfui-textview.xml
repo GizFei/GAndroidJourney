@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- YFUi TextView 文本视图样式 -->
+    <style name="YFUi.Widget.TextView" />
+
+    <style name="YFUi.Widget.TextView.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="YFUi.Widget.TextView.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="YFUi.Widget.TextView.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="YFUi.Widget.TextView.SubTitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/light_dark</item>
+    </style>
+    <style name="YFUi.Widget.TextView.SubTitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/light_dark</item>
+    </style>
+    <style name="YFUi.Widget.TextView.Body1" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <style name="YFUi.Widget.TextView.Header">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/common_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/common_padding_horizontal</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+
+    <style name="YFUi.Widget.TextView.WhiteBody">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/common_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/common_padding_horizontal</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

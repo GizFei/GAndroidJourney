@@ -26,7 +26,7 @@
             tools:context=".components.uilayer.databinding.ObservableDataObjectsActivity">
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_collections"
                 android:layout_width="match_parent"
                 android:text="Observable collections"
@@ -108,7 +108,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_observable_object"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
@@ -135,7 +135,7 @@
                     >
 
                     <TextView
-                        style="@style/YFTextView.Title1"
+                        style="@style/YFUi.Widget.TextView.Headline1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ObservableUser"
@@ -219,7 +219,7 @@
                     >
 
                     <TextView
-                        style="@style/YFTextView.Title1"
+                        style="@style/YFUi.Widget.TextView.Headline1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="NonObservableUser"

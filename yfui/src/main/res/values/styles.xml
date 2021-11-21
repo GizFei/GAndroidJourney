@@ -7,4 +7,7 @@
     <!-- Widget样式基类 -->
     <style name="YFUi.Widget" />
 
+    <!-- TextAppearance样式基类 -->
+    <style name="YFUi.TextAppearance" />
+
 </resources>

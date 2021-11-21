@@ -4,8 +4,8 @@ import android.widget.ListView
 import android.widget.SimpleAdapter
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coder.giz.android.architecture.helper.SimpleListItemOneAdapter
-import coder.giz.android.architecture.helper.SimpleListItemTwoAdapter
+import coder.giz.android.yfui.recyclerview.adapter.SimpleListItemOneAdapter
+import coder.giz.android.yfui.recyclerview.adapter.SimpleListItemTwoAdapter
 
 /**
  * Created by GizFei on 2021/11/2

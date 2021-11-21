@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        tools:text="40"
+        />
+
+    <SeekBar
+        style="@style/YFUi.Widget.SeekBar.Primary"
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        tools:max="100"
+        tools:progress="40"
+        />
+
+</LinearLayout>

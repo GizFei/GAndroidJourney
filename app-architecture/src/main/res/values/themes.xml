@@ -20,29 +20,6 @@
         <item name="android:textColor">@color/light_dark</item>
     </style>
 
-    <style name="YFTextView.Header">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">@dimen/common_padding_horizontal</item>
-        <item name="android:paddingEnd">@dimen/common_padding_horizontal</item>
-        <item name="android:paddingTop">12dp</item>
-        <item name="android:paddingBottom">12dp</item>
-        <item name="android:background">@color/light_gray</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/dark_gray</item>
-    </style>
-    <style name="YFTextView.WhiteBody">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">@dimen/common_padding_horizontal</item>
-        <item name="android:paddingEnd">@dimen/common_padding_horizontal</item>
-        <item name="android:paddingTop">12dp</item>
-        <item name="android:paddingBottom">12dp</item>
-        <item name="android:background">@color/white</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
     <style name="YFCardView" />
     <style name="YFCardView.Common">
         <item name="cardElevation">4dp</item>

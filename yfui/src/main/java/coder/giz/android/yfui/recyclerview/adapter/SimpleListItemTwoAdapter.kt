@@ -1,5 +1,6 @@
-package coder.giz.android.architecture.helper
+package coder.giz.android.yfui.recyclerview.adapter
 
+import android.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ class SimpleListItemTwoAdapter : RecyclerView.Adapter<SimpleListItemTwoAdapter.I
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemTwoHolder {
         return ItemTwoHolder(
             LayoutInflater.from(parent.context)
-                .inflate(android.R.layout.simple_list_item_2, parent, false)
+                .inflate(R.layout.simple_list_item_2, parent, false)
         )
     }
 

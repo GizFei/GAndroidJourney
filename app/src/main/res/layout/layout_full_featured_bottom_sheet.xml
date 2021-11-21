@@ -49,7 +49,7 @@
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="16dp"
                 android:text="Login in"
-                android:textAppearance="@style/YFTextAppearance.Main"
+                android:textAppearance="@style/YFUi.TextAppearance.Main"
                 android:textColor="@color/white"
                 android:background="@drawable/bg_gradient_purple_to_pink"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Main"
+                style="@style/YFUi.Widget.TextView.Body1"
                 android:id="@+id/tv_forget_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

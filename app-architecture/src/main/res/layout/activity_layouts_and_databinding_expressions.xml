@@ -44,7 +44,7 @@
                 app:constraint_referenced_ids="header_null_coalescing,tv_null_coalescing_str,btn_nc_nonnull_str,btn_nc_nullable_str" />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_null_coalescing"
                 android:layout_width="match_parent"
                 android:text="Null coalescing operator（空合并运算符）"
@@ -53,7 +53,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_null_coalescing_str"
                 android:layout_width="match_parent"
                 android:text="@{nullableStr ?? `Replacement for null String`}"
@@ -107,7 +107,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_property_ref"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
@@ -117,7 +117,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_count"
                 android:layout_width="match_parent"
                 android:text='@{"Count: " + String.valueOf(viewModel.count)}'
@@ -126,7 +126,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_count_livedata"
                 android:layout_width="match_parent"
                 android:text='@{"CountLiveData: " + String.valueOf(viewModel.countLiveData)}'
@@ -149,7 +149,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_view_ref"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
@@ -159,7 +159,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_view_ref"
                 android:layout_width="match_parent"
                 android:text='@{"Text from TextViewRef: " + tvNullCoalescingStr.text}'
@@ -168,7 +168,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_collections"
                 android:layout_width="match_parent"
                 android:layout_marginTop="8dp"
@@ -178,7 +178,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_collection_list"
                 android:layout_width="match_parent"
                 android:text='@{"List: " + viewModel.listToString(aList) + "\nThe first one: " + aList[0]}'
@@ -187,7 +187,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_collection_map"
                 android:layout_width="match_parent"
                 android:text='@{"Map[\"Google\"] = " + aMap["Google"] + " | Map.Apple = " + aMap.apple + " | Map.UnknownKey = " + aMap.UnknownKey}'
@@ -196,7 +196,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_resources"
                 android:layout_width="match_parent"
                 android:layout_marginTop="8dp"
@@ -206,7 +206,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_res_string"
                 android:layout_width="match_parent"
                 android:text='@{"Module name(StringRef): " + @string/module_name}'
@@ -215,7 +215,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.WhiteBody"
+                style="@style/YFUi.Widget.TextView.WhiteBody"
                 android:id="@+id/tv_res_string_format"
                 android:layout_width="match_parent"
                 android:text='@{"StringRef format: " + @string/intro_age(16)}'
@@ -224,7 +224,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_event_handling"
                 android:layout_width="match_parent"
                 android:layout_marginTop="8dp"
@@ -246,7 +246,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Header"
+                style="@style/YFUi.Widget.TextView.Header"
                 android:id="@+id/header_includes"
                 android:layout_width="match_parent"
                 android:layout_marginTop="8dp"

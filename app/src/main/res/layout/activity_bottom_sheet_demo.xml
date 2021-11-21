@@ -16,7 +16,7 @@
             tools:context=".BottomSheetMainActivity">
 
             <TextView
-                style="@style/YFTextView.Main"
+                style="@style/YFUi.Widget.TextView.Body1"
                 android:id="@+id/tv_base_dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 />
 
             <TextView
-                style="@style/YFTextView.Main"
+                style="@style/YFUi.Widget.TextView.Body1"
                 android:id="@+id/tv_base_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

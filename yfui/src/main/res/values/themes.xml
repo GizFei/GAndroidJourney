@@ -33,30 +33,4 @@
         <item name="switchMinWidth">56dp</item>
     </style>
 
-    <!-- 文本视图样式 -->
-    <style name="YFTextView" />
-    <style name="YFTextView.Main" parent="TextAppearance.MaterialComponents.Body1" />
-    <style name="YFTextView.Title1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="android:textSize">36sp</item>
-    </style>
-    <style name="YFTextView.Title2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="android:textSize">30sp</item>
-    </style>
-    <style name="YFTextView.Title3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-    <style name="YFTextView.SubTitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/light_dark</item>
-    </style>
-    <style name="YFTextView.SubTitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/light_dark</item>
-    </style>
-
-    <!-- 文本样式 -->
-    <style name="YFTextAppearance" />
-    <style name="YFTextAppearance.Main" parent="TextAppearance.MaterialComponents.Body1" />
-
 </resources>

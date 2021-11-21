@@ -1,6 +1,5 @@
 package coder.giz.android.yfutility.navigation.base
 
-import android.annotation.SuppressLint
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 

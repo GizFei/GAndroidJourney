@@ -59,4 +59,14 @@
     <color name="error_light_accent">#FDB7C7</color>
     <color name="error_text">#CC0F35</color>
 
+
+    <!-- Offline LED颜色 -->
+    <color name="led_gray">#DBDCDD</color>
+    <color name="led_yellow">#F7D600</color>
+    <color name="led_orange">#FFAA00</color>
+    <color name="led_blue">#00ABE5</color>
+    <color name="led_red">#FF002F</color>
+    <color name="led_green">#00DB84</color>
+    <color name="led_yellow_green">#BCEB00</color>
+
 </resources>

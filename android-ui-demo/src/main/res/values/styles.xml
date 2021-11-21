@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PopupWindowAnimation" />
+    <style name="PopupWindowAnimation.Complex">
+        <item name="android:windowEnterAnimation">@anim/popup_window_enter_complex</item>
+        <item name="android:windowExitAnimation">@anim/popup_window_exit_complex</item>
+    </style>
+    <style name="PopupWindowAnimation.Slide">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
+    
+</resources>

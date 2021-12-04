@@ -113,6 +113,7 @@ class ObservableDataObjectsViewModel : ViewModel() {
 }
 
 class ObservableUser : BaseObservable() {
+    // 生成fieldId: BR.firstName
     @get:Bindable
     var firstName = DataGenerators.NameOne.firstName
         set(value) {
@@ -120,6 +121,7 @@ class ObservableUser : BaseObservable() {
             notifyPropertyChanged(BR.firstName)
         }
 
+    // 生成fieldId: BR.lastName
     @get:Bindable
     var lastName = DataGenerators.NameOne.lastName
         set(value) {
@@ -127,6 +129,7 @@ class ObservableUser : BaseObservable() {
             notifyPropertyChanged(BR.lastName)
         }
 
+    // 生成fieldId: BR.age
     @get:Bindable
     var age = 15
         set(value) {

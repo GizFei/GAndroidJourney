@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".components.uilayer.databinding.TwoWayDatabindingActivity"
+            android:exported="false" />
+        <activity
             android:name=".components.uilayer.databinding.ObservableDataObjectsActivity"
             android:exported="false" />
         <activity
@@ -15,6 +18,9 @@
             android:exported="false" />
         <activity
             android:name=".components.uilayer.databinding.DataBindingWhiteboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".components.uilayer.databinding.BindingAdaptersActivity"
             android:exported="false" />
     </application>
 

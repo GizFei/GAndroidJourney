@@ -55,6 +55,12 @@
     <style name="YFUi.Widget.Button.Solid.Info.NoRipple">
         <item name="rippleColor">@null</item>
     </style>
+    <style name="YFUi.Widget.Button.Solid.Info.FullWidth">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/common_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/common_margin_horizontal</item>
+    </style>
     <style name="YFUi.Widget.Button.Solid.Warning">
         <item name="android:textColor">@color/yfui_btn_solid_warning_text_color</item>
         <item name="strokeWidth">1.5dp</item>

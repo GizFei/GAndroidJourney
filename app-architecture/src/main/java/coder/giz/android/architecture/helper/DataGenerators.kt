@@ -1,7 +1,9 @@
 package coder.giz.android.architecture.helper
 
+import coder.giz.android.architecture.components.uilayer.databinding.BindingAdaptersActivity
 import coder.giz.android.architecture.components.uilayer.databinding.LayoutsAndDatabindingExpressionsActivity
 import coder.giz.android.architecture.components.uilayer.databinding.ObservableDataObjectsActivity
+import coder.giz.android.architecture.components.uilayer.databinding.TwoWayDatabindingActivity
 import coder.giz.android.architecture.components.uilayer.viewbinding.ViewBindingActivity
 import coder.giz.android.yfutility.navigation.ActivityNavItem
 import coder.giz.android.yfutility.navigation.HeaderNavItem
@@ -9,7 +11,6 @@ import coder.giz.android.yfutility.navigation.HeaderNavItem
 /**
  * Created by GizFei on 2021/10/31
  */
-
 internal object DataGenerators {
     val AppArchitectureNavItems = listOf(
         HeaderNavItem("Arch Components > UI layer > View binding"),
@@ -20,6 +21,10 @@ internal object DataGenerators {
             LayoutsAndDatabindingExpressionsActivity::class),
         ActivityNavItem("Observable data objects", "使用可观察对象",
             ObservableDataObjectsActivity::class),
+        ActivityNavItem("Binding Adapters", "绑定适配器",
+            BindingAdaptersActivity::class),
+        ActivityNavItem("Two-way data binding", "双向绑定",
+            TwoWayDatabindingActivity::class),
     )
 
     val OperatorSystemList = listOf("Android", "iOS", "Windows", "MacOS", "Linux", "Ubuntu")

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="coder.giz.android.architecture.components.uilayer.databinding.TwoWayDatabindingViewModel" />
+        <variable
+            name="viewModel"
+            type="TwoWayDatabindingViewModel" />
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".components.uilayer.databinding.TwoWayDatabindingActivity">
+
+        <coder.giz.android.yfui.seekbar.LabelSeekBar
+            android:id="@+id/label_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin_horizontal_small"
+            android:layout_marginEnd="@dimen/common_margin_horizontal_small"
+            android:layout_marginTop="8dp"
+            progress="@={viewModel.labelSeekBarProgress}"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/common_margin_horizontal_small"
+            android:src="@drawable/ic_round_remove"
+            android:contentDescription="@null"
+            android:onClick="@{onClickListener}"
+            app:tint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/label_seekbar"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/common_margin_horizontal_small"
+            android:src="@drawable/ic_round_add"
+            android:contentDescription="@null"
+            android:onClick="@{onClickListener}"
+            app:tint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/label_seekbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_fab_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="fab_increase,fab_decrease"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_show_label_seekbar_progress"
+            style="@style/YFUi.Widget.Button.Solid.Info"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/common_margin_horizontal_half"
+            android:layout_marginEnd="@dimen/common_margin_horizontal_half"
+            android:onClick="@{onClickListener}"
+            android:text="显示labelSeekBarProgress值"
+            app:layout_constraintBottom_toBottomOf="@id/barrier_fab_bottom"
+            app:layout_constraintTop_toTopOf="@id/barrier_fab_top"
+            app:layout_constraintStart_toEndOf="@id/fab_decrease"
+            app:layout_constraintEnd_toStartOf="@id/fab_increase"
+            />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_fab_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="fab_increase,fab_decrease"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

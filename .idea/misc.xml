@@ -25,8 +25,11 @@
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/activity_popup_window_demo.xml" value="0.20836120401337793" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/layout_popup_window_content.xml" value="0.45" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/layout_popup_window_content_with_arrow.xml" value="0.335" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_binding_adapters.xml" value="0.17291666666666666" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_databinding_whiteboard.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_layouts_and_databinding_expressions.xml" value="0.24074074074074073" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_observable_data_objects.xml" value="0.17708333333333334" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_two_way_databinding.xml" value="0.15694444444444444" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_view_binding.xml" value="0.27025641025641023" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/fragment_user_profile.xml" value="0.27025641025641023" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/fragment_view_binding.xml" value="0.25277777777777777" />

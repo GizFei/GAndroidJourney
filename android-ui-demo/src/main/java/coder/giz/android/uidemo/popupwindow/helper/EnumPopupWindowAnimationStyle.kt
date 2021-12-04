@@ -6,7 +6,7 @@ package coder.giz.android.uidemo.popupwindow.helper
 enum class EnumPopupWindowAnimationStyle(
     val description: String
 ) {
-    COMPLEX("Complex(Rotation & Alpha & Scale"),
+    COMPLEX("Complex(Rotation & Alpha & Scale)"),
     SLIDE("Slide(Alpha & Translate)"),
     ;
 

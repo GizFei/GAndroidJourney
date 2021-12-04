@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="coder.giz.android.architecture.components.uilayer.databinding.BindingAdaptersViewModel" />
+        <variable
+            name="viewModel"
+            type="BindingAdaptersViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{viewModel.isDarkMode ? @color/black : @color/white}"
+        tools:context=".components.uilayer.databinding.DataBindingWhiteboardActivity">
+
+        <Button
+            style="@style/YFUi.Widget.Button.Solid.Info.FullWidth"
+            android:id="@+id/btn_switch_bg_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="切换背景颜色"
+            android:onClick="@{() -> viewModel.switchDarkMode()}"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

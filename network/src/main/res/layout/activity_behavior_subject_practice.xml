@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="viewModel"
+            type="coder.giz.android.network.ui.BehaviorSubjectPracticeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/common_padding_horizontal"
+            android:paddingEnd="@dimen/common_padding_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_emit_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下一次正常发送"
+                android:onClick="@{onClickListener}"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_emit_token_expired"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下一次发送Token过期"
+                android:onClick="@{onClickListener}"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_post_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟postRequest发送"
+                android:onClick="@{() -> viewModel.postRequest()}"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_post_request_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟postRequestStepByStep发送"
+                android:onClick="@{() -> viewModel.postRequestStepByStep()}"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/YFUi.Widget.Button.Solid.Info"
+                android:id="@+id/btn_post_request_emitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟postRequestEmitter发送"
+                android:onClick="@{() -> viewModel.postRequestEmitter()}"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/YFUi.Widget.TextView.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.behaviorSubjectMessage}"
+                tools:text="BehaviorSubject Message"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

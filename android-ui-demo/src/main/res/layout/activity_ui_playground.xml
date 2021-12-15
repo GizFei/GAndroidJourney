@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".playground.UiPlaygroundActivity">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin_horizontal_small"
+                app:contentPadding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="240dp"
+                        android:layout_height="240dp"
+                        android:src="@drawable/avatar"
+                        android:contentDescription="@null"
+                        />
+
+                    <TextView
+                        style="@style/YFUi.Widget.TextView.Headline1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RandomText"
+                        tools:ignore="HardcodedText"
+                        />
+
+                    <Button
+                        style="@style/YFUi.Widget.Button.Solid.Info"
+                        android:id="@+id/btn_expand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expand"
+                        tools:ignore="HardcodedText"
+                        />
+
+                    <Button
+                        style="@style/YFUi.Widget.Button.Solid.Info"
+                        android:id="@+id/btn_collapse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Collapse"
+                        tools:ignore="HardcodedText"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <coder.giz.android.uidemo.practice.ShadowView
+                android:id="@+id/shadow_view"
+                android:layout_width="200dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/card_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <coder.giz.android.uidemo.practice.ShadowVerticalView
+                android:id="@+id/shadow_vertical_view"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/shadow_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <coder.giz.android.uidemo.practice.ShadowLayout
+                android:id="@+id/shadow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/shadow_vertical_view"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/avatar"
+                        android:contentDescription="@null"
+                        />
+
+                    <TextView
+                        style="@style/YFUi.Widget.TextView.Headline1"
+                        android:id="@+id/tv_animate_shadow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RandomText"
+                        tools:ignore="HardcodedText"
+                        />
+
+                </LinearLayout>
+
+            </coder.giz.android.uidemo.practice.ShadowLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

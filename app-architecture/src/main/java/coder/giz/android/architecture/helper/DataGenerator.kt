@@ -11,7 +11,7 @@ import coder.giz.android.yfutility.navigation.HeaderNavItem
 /**
  * Created by GizFei on 2021/10/31
  */
-internal object DataGenerators {
+internal object DataGenerator {
     val AppArchitectureNavItems = listOf(
         HeaderNavItem("Arch Components > UI layer > View binding"),
         ActivityNavItem("ViewBindingActivity", "使用View binding扩充布局的Activity",

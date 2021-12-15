@@ -15,14 +15,25 @@
         <entry key="..\:/Android Projects/GAndroidJourney/app/src/main/res/layout/item_main_nav_item.xml" value="0.24166666666666667" />
         <entry key="..\:/Android Projects/GAndroidJourney/yfutility/src/main/res/layout/item_nav.xml" value="0.24166666666666667" />
         <entry key="..\:/Android Projects/GAndroidJourney/yfutility/src/main/res/layout/item_nav_header.xml" value="0.24074074074074073" />
+        <entry key="..\:/Android/SDK/platforms/android-30/data/res/drawable/expander_group.xml" value="0.1798611111111111" />
         <entry key="..\:/Android/SDK/platforms/android-30/data/res/layout/simple_list_item_1.xml" value="0.23796296296296296" />
         <entry key="..\:/Android/SDK/platforms/android-30/data/res/layout/simple_list_item_2.xml" value="0.23796296296296296" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/drawable-v24/ic_close_pressed.xml" value="0.21872909698996656" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/drawable/ic_arrow_down_white.xml" value="0.21872909698996656" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/drawable/ic_close.xml" value="0.21666666666666667" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/drawable/ic_close_icon.xml" value="0.1798611111111111" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/drawable/ic_close_normal.xml" value="0.1798611111111111" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/drawable/ic_round_close.xml" value="0.21666666666666667" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/activity_android_ui_demo_main.xml" value="0.15833333333333333" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/activity_expandable_list_view_demo.xml" value="0.15555555555555556" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/activity_main.xml" value="0.11486486486486487" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/activity_popup_window_demo.xml" value="0.20836120401337793" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/activity_ui_playground.xml" value="0.16875" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/content_main.xml" value="0.15416666666666667" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/fragment_first.xml" value="0.11486486486486487" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/fragment_second.xml" value="0.11486486486486487" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/item_elv_child_view.xml" value="0.15208333333333332" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/item_elv_group_header.xml" value="0.20836120401337793" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/layout_popup_window_content.xml" value="0.45" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/android-ui-demo/src/main/res/layout/layout_popup_window_content_with_arrow.xml" value="0.335" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app-architecture/src/main/res/layout/activity_binding_adapters.xml" value="0.17291666666666666" />
@@ -53,6 +64,8 @@
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.28615384615384615" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26458333333333334" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/bottomsheet/src/main/res/drawable/bg_top_round_corner_16.xml" value="0.21296296296296297" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/network/src/main/res/layout/activity_behavior_subject_practice.xml" value="0.1597222222222222" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/network/src/main/res/layout/activity_network_main.xml" value="0.15486111111111112" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/ui-practice/src/main/res/drawable/seekbar_drawable.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/ui-practice/src/main/res/drawable/seekbar_thumb.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/ui-practice/src/main/res/layout/activity_ui_practice_main.xml" value="0.18796296296296297" />

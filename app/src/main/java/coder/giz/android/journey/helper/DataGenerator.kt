@@ -6,11 +6,12 @@ import coder.giz.android.journey.main.MainNavItemData
 import coder.giz.android.journey.yfui_demo.button.YFUiButtonDemoActivity
 import coder.giz.android.journey.yfui_demo.button.YFUiButtonDraftActivity
 import coder.giz.android.journey.yfui_demo.dialog.BottomPopupDialogFragmentDemoActivity
+import coder.giz.android.network.NetworkMainActivity
 
 /**
  * Created by GizFei on 2021/10/1
  */
-object DataGenerators {
+object DataGenerator {
 
     val MainNavItemDataList = listOf(
         MainNavItemData(
@@ -37,6 +38,11 @@ object DataGenerators {
             "App Architecture",
             "App Architecture学习",
             AppArchitectureMainActivity::class
+        ),
+        MainNavItemData(
+            "Network",
+            "Network练习",
+            NetworkMainActivity::class
         )
     )
 

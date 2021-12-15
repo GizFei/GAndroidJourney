@@ -1,7 +1,7 @@
 package coder.giz.android.uidemo
 
 import coder.giz.android.uidemo.databinding.ActivityAndroidUiDemoMainBinding
-import coder.giz.android.uidemo.helper.DataGenerators
+import coder.giz.android.uidemo.helper.DataGenerator
 import coder.giz.android.yfui.base.DataBindingBaseActivity
 import coder.giz.android.yfutility.navigation.ActivityNavAdapter
 
@@ -11,7 +11,7 @@ class AndroidUiDemoMainActivity : DataBindingBaseActivity<ActivityAndroidUiDemoM
 
     override fun initView() {
         mBinding.rvMainNav.adapter = ActivityNavAdapter(this).apply {
-            updateItems(DataGenerators.AndroidUiDemoNavItems)
+            updateItems(DataGenerator.AndroidUiDemoNavItems)
         }
     }
 

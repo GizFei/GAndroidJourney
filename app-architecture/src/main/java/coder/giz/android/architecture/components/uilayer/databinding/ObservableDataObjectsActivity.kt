@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import coder.giz.android.architecture.BR
 import coder.giz.android.architecture.R
 import coder.giz.android.architecture.databinding.ActivityObservableDataObjectsBinding
-import coder.giz.android.architecture.helper.DataGenerators
+import coder.giz.android.architecture.helper.DataGenerator
 import coder.giz.android.yfui.base.MvvmBaseActivity
 import kotlin.random.Random
 
@@ -68,8 +68,8 @@ class ObservableDataObjectsActivity :
 
     private fun changeObservableUser() {
         when (Random.nextInt(3)) {
-            0 -> mViewModel.observableUser.firstName = "${DataGenerators.NameOne.firstName} ${Random.nextFloat()}"
-            1 -> mViewModel.observableUser.lastName = "${DataGenerators.NameOne.lastName} ${Random.nextFloat()}"
+            0 -> mViewModel.observableUser.firstName = "${DataGenerator.NameOne.firstName} ${Random.nextFloat()}"
+            1 -> mViewModel.observableUser.lastName = "${DataGenerator.NameOne.lastName} ${Random.nextFloat()}"
             2 -> mViewModel.observableUser.age = Random.nextInt(8, 18)
         }
     }
@@ -87,10 +87,10 @@ class ObservableDataObjectsActivity :
     private fun changeNonObservableUser() {
         when (Random.nextInt(3)) {
             0 -> {
-                mViewModel.nonObservableUser.firstName = "${DataGenerators.NameTwo.firstName} ${Random.nextFloat()}"
+                mViewModel.nonObservableUser.firstName = "${DataGenerator.NameTwo.firstName} ${Random.nextFloat()}"
             }
             1 -> {
-                mViewModel.nonObservableUser.lastName = "${DataGenerators.NameTwo.lastName} ${Random.nextFloat()}"
+                mViewModel.nonObservableUser.lastName = "${DataGenerator.NameTwo.lastName} ${Random.nextFloat()}"
             }
             2 -> {
                 mViewModel.nonObservableUser.age = Random.nextInt(10, 24)
@@ -102,10 +102,10 @@ class ObservableDataObjectsActivity :
 
 class ObservableDataObjectsViewModel : ViewModel() {
     val operatorSystemList = ObservableArrayList<String>().apply {
-        addAll(DataGenerators.OperatorSystemList)
+        addAll(DataGenerator.OperatorSystemList)
     }
     val companyProductMap = ObservableArrayMap<String, String>().apply {
-        putAll(DataGenerators.CompanyProductMap)
+        putAll(DataGenerator.CompanyProductMap)
     }
     // 为了测试，使用var。实际使用时应定义成val。
     var observableUser = ObservableUser()
@@ -115,7 +115,7 @@ class ObservableDataObjectsViewModel : ViewModel() {
 class ObservableUser : BaseObservable() {
     // 生成fieldId: BR.firstName
     @get:Bindable
-    var firstName = DataGenerators.NameOne.firstName
+    var firstName = DataGenerator.NameOne.firstName
         set(value) {
             field = value
             notifyPropertyChanged(BR.firstName)
@@ -123,7 +123,7 @@ class ObservableUser : BaseObservable() {
 
     // 生成fieldId: BR.lastName
     @get:Bindable
-    var lastName = DataGenerators.NameOne.lastName
+    var lastName = DataGenerator.NameOne.lastName
         set(value) {
             field = value
             notifyPropertyChanged(BR.lastName)
@@ -139,7 +139,7 @@ class ObservableUser : BaseObservable() {
 }
 
 class NonObservableUser {
-    var firstName = DataGenerators.NameTwo.firstName
-    var lastName = DataGenerators.NameTwo.lastName
+    var firstName = DataGenerator.NameTwo.firstName
+    var lastName = DataGenerator.NameTwo.lastName
     var age = 16
 }

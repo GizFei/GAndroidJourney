@@ -9,7 +9,7 @@ import coder.giz.android.architecture.R
 import coder.giz.android.architecture.components.uilayer.databinding.model.newPersonLittleBoy
 import coder.giz.android.architecture.components.uilayer.databinding.model.newPersonLittleGirl
 import coder.giz.android.architecture.databinding.ActivityLayoutsAndDatabindingExpressionsBinding
-import coder.giz.android.architecture.helper.DataGenerators
+import coder.giz.android.architecture.helper.DataGenerator
 import coder.giz.android.yfui.base.MvvmBaseActivity
 
 /**
@@ -30,8 +30,8 @@ class LayoutsAndDatabindingExpressionsActivity :
         with(mBinding) {
             onClickListener = this@LayoutsAndDatabindingExpressionsActivity
             person = newPersonLittleBoy()
-            aList = DataGenerators.OperatorSystemList
-            aMap = DataGenerators.CompanyProductMap
+            aList = DataGenerator.OperatorSystemList
+            aMap = DataGenerator.CompanyProductMap
             viewModel = mViewModel
         }
     }

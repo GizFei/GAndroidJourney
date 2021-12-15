@@ -1,6 +1,7 @@
 package coder.giz.android.yfutility.util
 
 import android.content.Context
+import android.content.res.Resources
 import android.util.TypedValue
 
 /**
@@ -12,3 +13,6 @@ fun Context.dp2px(dp: Float): Float =
 
 fun Context.dp2px(dp: Int): Float =
     TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), this.resources.displayMetrics)
+
+val Int.dp: Float get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(),
+    Resources.getSystem().displayMetrics)

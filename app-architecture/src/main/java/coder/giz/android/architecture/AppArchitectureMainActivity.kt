@@ -1,7 +1,7 @@
 package coder.giz.android.architecture
 
 import coder.giz.android.architecture.databinding.ActivityAppArchitectureMainBinding
-import coder.giz.android.architecture.helper.DataGenerators
+import coder.giz.android.architecture.helper.DataGenerator
 import coder.giz.android.yfui.base.DataBindingBaseActivity
 import coder.giz.android.yfutility.navigation.ActivityNavAdapter
 
@@ -13,7 +13,7 @@ class AppArchitectureMainActivity : DataBindingBaseActivity<ActivityAppArchitect
 
     override fun initView() {
         mNavAdapter = ActivityNavAdapter(this).apply {
-            updateItems(DataGenerators.AppArchitectureNavItems)
+            updateItems(DataGenerator.AppArchitectureNavItems)
         }
         mBinding.rvNavigation.adapter = mNavAdapter
     }

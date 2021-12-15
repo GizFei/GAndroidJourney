@@ -11,7 +11,7 @@ import coder.giz.android.uidemo.R
 import coder.giz.android.uidemo.databinding.ActivityPopupWindowDemoBinding
 import coder.giz.android.uidemo.databinding.LayoutPopupWindowContentBinding
 import coder.giz.android.uidemo.databinding.LayoutPopupWindowContentWithArrowBinding
-import coder.giz.android.uidemo.helper.DataGenerators
+import coder.giz.android.uidemo.helper.DataGenerator
 import coder.giz.android.uidemo.helper.GravityItemSpinnerEntries
 import coder.giz.android.uidemo.popupwindow.helper.EnumPopupWindowAnimationStyle
 import coder.giz.android.uidemo.popupwindow.helper.EnumPopupWindowTransition
@@ -84,7 +84,7 @@ class PopupWindowDemoActivity : MvvmBaseActivity<ActivityPopupWindowDemoBinding,
         )
         popupViewBinding.run {
             rvItems.adapter = SimpleListItemOneAdapter().apply {
-                updateData(DataGenerators.OperatorSystemList)
+                updateData(DataGenerator.OperatorSystemList)
             }
             if (showClose) {
                 ivClose.isVisible = true
@@ -113,7 +113,7 @@ class PopupWindowDemoActivity : MvvmBaseActivity<ActivityPopupWindowDemoBinding,
         )
         popupViewBinding.run {
             rvItems.adapter = SimpleListItemOneAdapter().apply {
-                updateData(DataGenerators.OperatorSystemList)
+                updateData(DataGenerator.OperatorSystemList)
             }
             if (showClose) {
                 ivClose.isVisible = true

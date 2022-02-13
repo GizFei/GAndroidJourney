@@ -3,6 +3,8 @@ package coder.giz.android.uidemo.helper
 import coder.giz.android.uidemo.expandablelistview.ExpandableListViewDemoActivity
 import coder.giz.android.uidemo.playground.UiPlaygroundActivity
 import coder.giz.android.uidemo.popupwindow.PopupWindowDemoActivity
+import coder.giz.android.uidemo.slider.TemperatureSliderDemoActivity
+import coder.giz.android.uidemo.tablayout.ColumnTabLayoutDemoActivity
 import coder.giz.android.yfutility.navigation.ActivityNavItem
 import coder.giz.android.yfutility.navigation.HeaderNavItem
 
@@ -19,6 +21,10 @@ internal object DataGenerator {
         HeaderNavItem("Playground"),
         ActivityNavItem("UiPlayground", "Ui练习页面",
             UiPlaygroundActivity::class),
+        ActivityNavItem("ColumnTabLayout", "ColumnTabLayout练习页面",
+            ColumnTabLayoutDemoActivity::class),
+        ActivityNavItem("TemperatureSlider", "TemperatureSlider练习页面",
+            TemperatureSliderDemoActivity::class),
     )
 
     val OperatorSystemList = listOf("Android", "iOS", "Windows", "MacOS", "Linux", "Ubuntu")

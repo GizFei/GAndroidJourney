@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- 指定可共享的目录 -->
+    <!-- 不指定具体的子文件夹，则令 path="/" 或者 path="." -->
+    <!-- /storage/emulated/0/Android/data/包名/files/ -->
+    <external-files-path name="my_files" path="/" />
+    <!-- /storage/emulated/0/ -->
+    <external-path name="external_path" path="." />
+</paths>

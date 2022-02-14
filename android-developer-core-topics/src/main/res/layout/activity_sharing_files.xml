@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".app_data_files.sharing_files.SharingFilesActivity">
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <Button
+                style="@style/YFUi.Widget.Button.Outlined.Primary"
+                android:id="@+id/btn_save_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                android:text="保存TXT文件"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Outlined.Primary"
+                android:id="@+id/btn_save_files"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                android:text="保存多个TXT文件"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Outlined.Primary"
+                android:id="@+id/btn_share_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                android:text="分享TXT文件"
+                />
+
+            <Button
+                style="@style/YFUi.Widget.Button.Outlined.Primary"
+                android:id="@+id/btn_list_files"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                android:text="列出所有TXT文件"
+                />
+
+            <TextView
+                android:id="@+id/tv_file_paths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

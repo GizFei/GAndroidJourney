@@ -43,6 +43,8 @@ dependencies {
 
     implementation "com.google.android.material:material:${google_android_material_version}"
 
+    implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlin_version}"
+
     implementation project(":yfutility")
     implementation project(":yfui")
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'

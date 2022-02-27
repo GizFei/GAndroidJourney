@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isContentVisible"
+            type="androidx.databinding.ObservableBoolean" />
+        <variable
+            name="isInfoPanelVisible"
+            type="androidx.databinding.ObservableBoolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/light_gray"
+        >
+
+        <ImageView
+            android:id="@+id/iv_show_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_round_dashboard_24"
+            android:scaleType="center"
+            android:background="@drawable/bg_round_corner_32"
+            android:elevation="8dp"
+            android:contentDescription="@null"
+            app:tint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            />
+
+        <ImageView
+            android:id="@+id/iv_switch_btn"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_outline_toggle_off"
+            android:background="@drawable/bg_round_corner_10"
+            android:elevation="8dp"
+            android:contentDescription="@null"
+            app:zoomVisibility="@{isContentVisible}"
+            app:tint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/iv_show_btn"
+            app:layout_constraintStart_toStartOf="@id/iv_show_btn"
+            app:layout_constraintEnd_toEndOf="@id/iv_show_btn"
+            app:layout_goneMarginTop="8dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_close_btn"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_close_icon"
+            android:background="@drawable/bg_round_corner_10"
+            android:elevation="8dp"
+            android:contentDescription="@null"
+            app:zoomVisibility="@{isContentVisible}"
+            app:tint="@color/error_normal"
+            app:layout_constraintStart_toStartOf="@id/iv_show_btn"
+            app:layout_constraintEnd_toEndOf="@id/iv_show_btn"
+            app:layout_constraintTop_toBottomOf="@id/iv_switch_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_debug_info_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:minHeight="100dp"
+            app:zoomVisibility="@{isContentVisible &amp;&amp; isInfoPanelVisible}"
+            app:translateVisibility="@{isInfoPanelVisible}"
+            app:cardBackgroundColor="#F5F5F5"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_goneMarginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/iv_show_btn"
+            app:layout_constraintTop_toTopOf="@id/iv_show_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    style="@style/YFUi.Widget.TextView.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="信息面板"
+                    tools:ignore="HardcodedText" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        style="@style/YFUi.Widget.TextView.SubTitle2"
+                        android:id="@+id/tv_debug_info_empty_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="面板空空如也。快去设置面板中开启条目吧快去设置面板中开启条目吧。"
+                        android:visibility="gone"
+                        tools:ignore="HardcodedText"
+                        tools:visibility="visible"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_info_cards"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_debug_info_card"
+                        />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_debug_setting_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:minHeight="200dp"
+            android:visibility="gone"
+            app:zoomVisibility="@{isContentVisible &amp;&amp; !isInfoPanelVisible}"
+            app:translateVisibility="@{!isInfoPanelVisible}"
+            app:cardBackgroundColor="#F5F5F5"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintStart_toEndOf="@id/iv_show_btn"
+            app:layout_constraintTop_toTopOf="@id/iv_show_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:visibility="visible"
+            tools:layout_marginTop="400dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                >
+
+                <TextView
+                    style="@style/YFUi.Widget.TextView.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="设置面板"
+                    tools:ignore="HardcodedText"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_setting_cards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_debug_setting_card"
+                    tools:itemCount="3"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

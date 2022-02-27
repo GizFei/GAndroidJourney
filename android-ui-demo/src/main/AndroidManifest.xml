@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="coder.giz.android.uidemo">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GAndroidJourney">
+        <activity
+            android:name=".floatingwindow.FloatingWindowDemoActivity"
+            android:exported="false" />
         <activity
             android:name=".tablayout.ColumnTabLayoutDemoActivity"
             android:exported="false" />

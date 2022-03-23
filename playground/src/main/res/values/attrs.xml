@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CountdownRingView">
+        <!-- 圆环背景色 -->
+        <attr name="crvRingBgColor" format="reference|color" />
+        <!-- 圆环色 -->
+        <attr name="crvRingColor" format="reference|color" />
+        <!-- 圆环宽度 -->
+        <attr name="crvRingWidth" format="dimension" />
+    </declare-styleable>
+
+</resources>

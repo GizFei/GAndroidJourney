@@ -15,42 +15,13 @@
             android:layout_height="match_parent"
             >
 
-            <Button
-                android:id="@+id/btn_start_timer"
-                style="@style/YFUi.Widget.Button.Solid.Info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
-                android:layout_marginTop="8dp"
-                android:text="开始倒计时"
-                app:layout_constraintTop_toTopOf="parent"
-                />
-
-            <coder.giz.android.playground.timer.CountdownLineView
-                android:id="@+id/countdown_line_view"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/btn_start_timer"
-                />
-
-            <coder.giz.android.playground.timer.CountdownRingView
-                android:id="@+id/countdown_ring_view"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginHorizontal="@dimen/common_margin_horizontal"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/countdown_line_view"
-                />
-
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/ll_countdowns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/countdown_ring_view"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="-44dp">
 
                 <FrameLayout
@@ -71,7 +42,7 @@
                         />
 
                     <coder.giz.android.playground.timer.CountdownRingView
-                        android:id="@+id/countdown_ring_view2"
+                        android:id="@+id/countdown_ring_view"
                         android:layout_width="236dp"
                         android:layout_height="236dp"
                         android:layout_gravity="center"
@@ -83,8 +54,17 @@
 
                 </FrameLayout>
 
+                <EditText
+                    android:id="@+id/et_end_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                    android:layout_marginVertical="16dp"
+                    android:hint="倒计时结束时间"
+                    />
+
                 <Button
-                    android:id="@+id/btn_line_timer_begin"
+                    android:id="@+id/btn_start_timer"
                     style="@style/YFUi.Widget.Button.Solid.Info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,23 +74,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_line_timer_from_20"
+                    android:id="@+id/btn_start_timer_out"
                     style="@style/YFUi.Widget.Button.Solid.Info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/common_margin_horizontal"
                     android:layout_marginTop="8dp"
-                    android:text="开始倒计时：20%"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/btn_line_timer_from_50"
-                    style="@style/YFUi.Widget.Button.Solid.Info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/common_margin_horizontal"
-                    android:layout_marginTop="8dp"
-                    android:text="开始倒计时：50%"
+                    android:text="开始倒计时：超时"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button

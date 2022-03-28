@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GAndroidJourney">
         <activity
+            android:name=".timer.AutoOffDemoActivity"
+            android:exported="false" />
+        <activity
             android:name=".PlaygroundMainActivity"
             android:exported="true">
             <intent-filter>

@@ -26,9 +26,10 @@ import kotlin.math.min
  *    · 圆环色
  *    · 圆环宽度
  *    · 光弧颜色
- * 3、*倒计时时，流动的渐变淡白色光弧效果
- * 4、与图片结合，圈住图片
- * 5、根据时间戳计算，并倒计时。如果已经结束或超时，则隐藏。
+ * ✅3、*倒计时时，流动的渐变淡白色光弧效果
+ * ✅4、与图片结合，圈住图片
+ * ✅5、根据时间戳计算，并倒计时。如果已经结束或超时，则隐藏。
+ * ✅6、动态调整光弧绕行速度
  *
  * Created by GizFei on 2022/3/22
  */
@@ -87,6 +88,11 @@ class CountdownRingView @JvmOverloads constructor(
 
     private var mCountDownTimer: MyCountDownTimer? = null
     private var mLightArcCountDownTimer: MyLightArcCountDownTimer? = null
+
+    /**
+     * 光弧绕行一圈所需的毫秒数。毫秒数越小，表示绕行一圈的速度越快。
+     */
+    private var mLightArcTimeMillisPerLap: Int = DEFAULT_LIGHT_ARC_MILLIS_PER_LAP
 
     override fun onDraw(canvas: Canvas) {
         YFLog.e("CountDown", "mPercent: $mRemainPercent mArcPercent: $mLightArcPercent")
@@ -173,9 +179,13 @@ class CountdownRingView @JvmOverloads constructor(
             return
         }
         if (totalMillis <= remainMillis) {
-            setRemainPercent(0f)
+            setRemainPercent(1f)
             return
         }
+        // 先走到起始位置
+        val startRemainPercent = remainMillis / totalMillis.toFloat()
+        setRemainPercent(startRemainPercent)
+        // 再开始倒计时
         mCountDownTimer = createCountDownTimer(remainMillis, totalMillis).apply {
             start()
         }
@@ -186,6 +196,7 @@ class CountdownRingView @JvmOverloads constructor(
 
     fun stopCountDown() {
         destroyAllCountDownTimers()
+        invalidate()
     }
 
     private fun createCountDownTimer(millisInFuture: Long, totalMillis: Long) =
@@ -223,6 +234,24 @@ class CountdownRingView @JvmOverloads constructor(
         destroyLightArcCountDownTimer()
     }
 
+    fun reset() {
+        destroyAllCountDownTimers()
+        mRemainPercent = 1f
+        mLightArcPercent = 1f
+        invalidate()
+    }
+
+    private fun dynamicAdjustLightArcTimeMillisPerLap() {
+        mLightArcTimeMillisPerLap = when (mRemainPercent) {
+            in 0f..0.1f -> 1000
+            in 0.1f..0.25f -> 2000
+            in 0.25f..0.5f -> 3000
+            in 0.5f..0.75f -> 4000
+            in 0.75f..1f -> 5000
+            else -> DEFAULT_LIGHT_ARC_MILLIS_PER_LAP
+        }
+    }
+
     private inner class MyCountDownTimer(
         millisInFuture: Long,
         totalMillis: Long,
@@ -237,6 +266,7 @@ class CountdownRingView @JvmOverloads constructor(
             isFinished = false
             val percent = millisUntilFinished / mTotalMillis
             setRemainPercent(percent)
+            dynamicAdjustLightArcTimeMillisPerLap()
         }
 
         override fun onFinish() {
@@ -248,8 +278,10 @@ class CountdownRingView @JvmOverloads constructor(
         }
     }
 
-    private inner class MyLightArcCountDownTimer : CountDownTimer(LIGHT_ARC_MILLIS_PER_LAP, 50) {
-        private val mTotalMillis: Float = LIGHT_ARC_MILLIS_PER_LAP.toFloat()
+    private inner class MyLightArcCountDownTimer :
+        CountDownTimer(mLightArcTimeMillisPerLap.toLong(), 50) {
+
+        private val mTotalMillis: Float = mLightArcTimeMillisPerLap.toFloat()
 
         override fun onTick(millisUntilFinished: Long) {
             val arcPercent = (millisUntilFinished / mTotalMillis) * 1f
@@ -273,7 +305,7 @@ class CountdownRingView @JvmOverloads constructor(
         private const val DEFAULT_RING_COLOR: Int = Color.CYAN
         private const val DEFAULT_RING_WIDTH_DP: Int = 8
         private const val DEFAULT_LIGHT_ARC_COLOR: Int = 0x3AFFFFFF
-        private const val LIGHT_ARC_MILLIS_PER_LAP: Long = 2000
+        private const val DEFAULT_LIGHT_ARC_MILLIS_PER_LAP: Int = 2000
     }
 
 }

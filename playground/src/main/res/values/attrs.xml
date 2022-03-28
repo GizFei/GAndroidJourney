@@ -8,6 +8,8 @@
         <attr name="crvRingColor" format="reference|color" />
         <!-- 圆环宽度 -->
         <attr name="crvRingWidth" format="dimension" />
+        <!-- 光弧颜色 -->
+        <attr name="crvLightArcColor" format="reference|color" />
     </declare-styleable>
 
 </resources>

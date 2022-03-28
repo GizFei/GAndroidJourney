@@ -54,7 +54,7 @@ class CountdownTimerActivity : DataBindingBaseActivity<ActivityCountdownTimerBin
     }
 
     private fun startCountdownTimer2From(@FloatRange(from = 0.0, to = 1.0) percent: Float) {
-        val totalMillis = 10000L
+        val totalMillis = 60000L
         val remainMillis = (totalMillis * (1 - percent)).toLong()
         mBinding.countdownRingView2.startCountDown(remainMillis, totalMillis)
     }

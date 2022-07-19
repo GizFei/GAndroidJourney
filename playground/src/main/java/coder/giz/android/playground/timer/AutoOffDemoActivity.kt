@@ -18,8 +18,8 @@ class AutoOffDemoActivity : DataBindingBaseActivity<ActivityAutoOffDemoBinding>(
 
     private fun startCountdownTimer() {
         val endTime = mBinding.etEndTime.text?.toString()?.toIntOrNull()
-            ?: (System.currentTimeMillis() / 1000L).toInt()
-        val delayMin = 2
+            ?: ((System.currentTimeMillis() / 1000L).toInt() + 10)
+        val delayMin = 1
         startCountdownTimer(endTime, delayMin)
     }
 

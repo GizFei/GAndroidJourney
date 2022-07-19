@@ -115,7 +115,7 @@ class CountdownRingView @JvmOverloads constructor(
                     -min(lightArcAngle, 30f)
                 } else {
                     val delta = lightArcAngle - sweepAngle
-                    -30 + delta
+                    -min(sweepAngle, 30 - delta)
                 }
                 canvas.drawArc(mArcRect, lightArcStartAngle, lightArcSweepAngle ,
                     false, mLightArcPaint)

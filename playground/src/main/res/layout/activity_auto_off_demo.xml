@@ -46,10 +46,10 @@
                         android:layout_width="236dp"
                         android:layout_height="236dp"
                         android:layout_gravity="center"
-                        app:crvRingBgColor="@color/light_gray"
+                        app:crvRingBgColor="#33333333"
                         app:crvRingColor="#7ABCFF"
                         app:crvRingWidth="16dp"
-                        app:crvLightArcColor="#3DFFFFFF"
+                        app:crvLightArcColor="#FFFFFF"
                         app:layout_constraintTop_toBottomOf="@id/btn_start_timer" />
 
                 </FrameLayout>

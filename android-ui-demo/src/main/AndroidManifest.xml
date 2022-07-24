@@ -38,6 +38,10 @@
         <activity
             android:name=".slider.TemperatureSliderDemoActivity"
             android:exported="false" />
+        <activity android:name=".recyclerview.DraggableRecyclerViewActivity"
+            />
+        <activity android:name=".animation.attention.ShakeAnimationDemoActivity"
+            />
     </application>
 
 </manifest>

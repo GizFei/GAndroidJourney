@@ -5,7 +5,7 @@
  */
 @file:JvmName("CalendarUtils")
 
-package coder.giz.android.yfutility.datatime
+package coder.giz.android.yfutility.datetime
 
 import androidx.annotation.IntRange
 import java.text.SimpleDateFormat

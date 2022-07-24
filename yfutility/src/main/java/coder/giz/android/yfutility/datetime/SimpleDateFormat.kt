@@ -5,7 +5,7 @@
  */
 @file:JvmName("SimpleDateFormatUtils")
 
-package coder.giz.android.yfutility.datatime
+package coder.giz.android.yfutility.datetime
 
 import java.text.ParseException
 import java.text.SimpleDateFormat

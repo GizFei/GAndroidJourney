@@ -3,7 +3,7 @@
  *
  * Created by GizFei on 2021/1/24
  */
-package coder.giz.android.yfutility.datatime
+package coder.giz.android.yfutility.datetime
 
 import java.text.SimpleDateFormat
 import java.util.Calendar

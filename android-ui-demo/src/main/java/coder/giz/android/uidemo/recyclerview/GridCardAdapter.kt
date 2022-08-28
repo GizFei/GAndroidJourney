@@ -8,12 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import coder.giz.android.uidemo.R
 import coder.giz.android.uidemo.databinding.ItemDebugInfoCardBinding
 import coder.giz.android.uidemo.helper.DataGenerator
+import coder.giz.android.uidemo.helper.printRecyclerViewLog
 import coder.giz.android.yfutility.util.dp2px
 
 /**
  * Created by GizFei on 2022/7/19
  */
 class GridCardAdapter : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>() {
+
+    var mItemTouchCallback: GridCardItemCallback? = null
 
     private val mData = buildList {
         addAll(DataGenerator.CompanyProductMap.toList())
@@ -40,7 +43,7 @@ class GridCardAdapter : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>
         notifyItemMoved(srcPos, targetPos)
     }
 
-    class GridCardViewHolder(private val mBinding: ItemDebugInfoCardBinding) :
+    inner class GridCardViewHolder(private val mBinding: ItemDebugInfoCardBinding) :
         RecyclerView.ViewHolder(mBinding.root) {
 
         fun bind(data: Pair<String, String>) {
@@ -49,6 +52,24 @@ class GridCardAdapter : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>
                 tvTitle.text = data.first
                 tvInfo.text = data.second
             }
+            itemView.setOnLongClickListener {
+                mItemTouchCallback?.isLongPressToDragEnabled = false
+                return@setOnLongClickListener true
+            }
+        }
+
+        fun onSelected() {
+            itemView.let {
+                it.scaleX = 1.2f
+                it.scaleY = 1.2f
+            }
+        }
+
+        fun onClear() {
+            itemView.let {
+                it.scaleX = 1f
+                it.scaleY = 1f
+            }
         }
 
     }
@@ -56,6 +77,8 @@ class GridCardAdapter : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>
 }
 
 class GridCardItemCallback(private val mAdapter: GridCardAdapter) : ItemTouchHelper.Callback() {
+
+    var isLongPressToDragEnabled = true
 
     override fun getMovementFlags(
         recyclerView: RecyclerView,
@@ -79,29 +102,53 @@ class GridCardItemCallback(private val mAdapter: GridCardAdapter) : ItemTouchHel
         return true
     }
 
+    override fun isLongPressDragEnabled(): Boolean {
+        return isLongPressToDragEnabled
+    }
+
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
     }
 
+    override fun onMoved(
+        recyclerView: RecyclerView,
+        viewHolder: RecyclerView.ViewHolder,
+        fromPos: Int,
+        target: RecyclerView.ViewHolder,
+        toPos: Int,
+        x: Int,
+        y: Int
+    ) {
+        printRecyclerViewLog { "onMoved ${viewHolder.itemView.top}" }
+        super.onMoved(recyclerView, viewHolder, fromPos, target, toPos, x, y)
+    }
+
     override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
         super.onSelectedChanged(viewHolder, actionState)
+        printRecyclerViewLog { "onSelectedChanged actionState: ${actionState}" }
         when (actionState) {
             ItemTouchHelper.ACTION_STATE_DRAG -> {
-                viewHolder?.itemView?.let {
-                    it.scaleX = 1.2f
-                    it.scaleY = 1.2f
-                }
-            }
-            ItemTouchHelper.ACTION_STATE_IDLE -> {
-                viewHolder?.itemView?.let {
-                    it.scaleX = 1f
-                    it.scaleY = 1f
-                }
+//                viewHolder?.itemView?.let {
+//                    it.scaleX = 1.2f
+//                    it.scaleY = 1.2f
+//                    (it.findViewById(R.id.cv_debug_info_card) as? CardView)?.cardElevation = it.context.dp2px(8f)
+//                }
+                (viewHolder as? GridCardAdapter.GridCardViewHolder)?.onSelected()
             }
         }
     }
+
+    override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+        super.clearView(recyclerView, viewHolder)
+        (viewHolder as? GridCardAdapter.GridCardViewHolder)?.onClear()
+        isLongPressToDragEnabled = true
+//        viewHolder.itemView.let {
+//            it.scaleX = 1f
+//            it.scaleY = 1f
+//            (it.findViewById(R.id.cv_debug_info_card) as? CardView)?.cardElevation = it.context.dp2px(2f)
+//        }
+    }
 }
 
-class GridCardItemTouchHelper(callback: ItemTouchHelper.Callback) : ItemTouchHelper(callback) {
-
+class GridCardItemTouchHelper(private val callback: ItemTouchHelper.Callback) : ItemTouchHelper(callback) {
 }

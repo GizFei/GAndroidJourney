@@ -43,6 +43,10 @@
             />
         <activity android:name=".animation.attention.ShakeAnimationDemoActivity"
             />
+        <activity android:name=".nestedscroll.NestedScrollViewDemoActivity"
+            />
+        <activity android:name=".viewpager.ViewPager2DemoActivity"
+            />
     </application>
 
 </manifest>

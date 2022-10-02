@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import androidx.core.view.NestedScrollingParent2
 import androidx.core.view.NestedScrollingParentHelper
 import androidx.core.view.ViewCompat
+import coder.giz.android.yfutility.data.toJson
 import coder.giz.android.yfutility.util.YFLog
 
 /**
@@ -63,14 +64,14 @@ class StickyNavLayout @JvmOverloads constructor(
     }
 
     override fun onNestedPreScroll(target: View, dx: Int, dy: Int, consumed: IntArray, type: Int) {
-        log { "onNestedPreScroll: dx=$dx  dy=$dy  consumed=$consumed  type=$type" }
+        log { "onNestedPreScroll: dx=$dx  dy=$dy  consumed=${consumed.toJson()}  type=$type" }
         val scrollUp = dy > 0 && scrollY < mTopScrollDistance
         val scrollDown = dy < 0 && scrollY >= 0 && !target.canScrollVertically(-1)
         if (scrollUp || scrollDown) {
-            scrollBy(0, dy)
-            consumed[1] = dy
+//            scrollBy(0, dy)
+//            consumed[1] = dy
 
-            mTopView?.move(-dy.toFloat() * 3)
+//            mTopView?.move(-dy.toFloat() * 3)
         }
     }
 

@@ -7,27 +7,107 @@
         android:layout_height="match_parent"
         >
 
-        <coder.giz.android.uidemo.nestedscroll.StickyNavLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
 
-            <coder.giz.android.uidemo.nestedscroll.ScanningLayout
-                android:id="@+id/scanning_layout"
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
-                />
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    >
 
-        </coder.giz.android.uidemo.nestedscroll.StickyNavLayout>
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="200dp"
+                        app:collapsedTitleGravity="center_horizontal"
+                        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                        >
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical"-->
+<!--                            >-->
+
+                            <coder.giz.android.uidemo.nestedscroll.ScanningLayout
+                                android:id="@+id/scanning_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_collapseMode="parallax"
+                                />
+
+                            <androidx.appcompat.widget.Toolbar
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:minHeight="200dp"
+                                app:layout_collapseMode="pin"
+                                app:title="hello"
+                                app:popupTheme="@style/Theme.GAndroidJourney.PopupOverlay"
+                                >
+
+<!--                                <coder.giz.android.uidemo.nestedscroll.ScanningLayout-->
+<!--                                    android:id="@+id/scanning_layout"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    app:layout_collapseMode="parallax"-->
+<!--                                    />-->
+
+                            </androidx.appcompat.widget.Toolbar>
+<!--                        </LinearLayout>-->
+
+
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recycler_view_horizontal"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        app:layout_scrollFlags="scroll"-->
+<!--                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                        />-->
+
+<!--                    <com.google.android.material.tabs.TabLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        app:layout_scrollFlags="noScroll"-->
+<!--                        >-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Tab 1" />-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Tab 2" />-->
+
+<!--                    </com.google.android.material.tabs.TabLayout>-->
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                    />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

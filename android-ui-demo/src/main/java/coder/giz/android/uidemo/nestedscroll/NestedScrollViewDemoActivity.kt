@@ -21,6 +21,9 @@ class NestedScrollViewDemoActivity : DataBindingBaseActivity<ActivityNestedScrol
             adapter = GridCardAdapter()
             addItemDecoration(ItemDecoration())
         }
+//        mBinding.recyclerViewHorizontal.run {
+//            adapter = GridCardAdapter()
+//        }
     }
 
     private class ItemDecoration : RecyclerView.ItemDecoration() {

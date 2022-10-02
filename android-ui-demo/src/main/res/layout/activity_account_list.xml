@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".tapo.account.AccountListActivity">
+
+            <TextView
+                style="@style/YFUi.Widget.TextView.Header"
+                android:id="@+id/tv_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="账号列表"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_accounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                app:spanCount="3"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_header"
+                tools:listitem="@layout/item_account"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/rv_accounts"
+                >
+
+                <Button
+                    android:id="@+id/btn_create_file"
+                    style="@style/YFUi.Widget.Button.Solid.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                    android:text="创建文件"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btn_open_file"
+                    style="@style/YFUi.Widget.Button.Solid.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                    android:text="打开文件 &amp; 编辑"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btn_view_file"
+                    style="@style/YFUi.Widget.Button.Solid.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                    android:text="查看文件内容"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/YFUi.Widget.TextView.Body1"
+                    android:id="@+id/tv_json_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/common_margin_horizontal"
+                    android:layout_marginTop="8dp"
+                    tools:text="Json File Content"
+                    />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

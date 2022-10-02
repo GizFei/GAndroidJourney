@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GAndroidJourney">
         <activity
+            android:name=".tapo.account.AccountListActivity"
+            android:exported="false" />
+        <activity
             android:name=".floatingwindow.FloatingWindowDemoActivity"
             android:exported="false" />
         <activity

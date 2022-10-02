@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+<!--        <ImageView-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:layout_marginBottom="-10dp"-->
+<!--            android:layout_marginStart="24dp"-->
+<!--            android:src="@drawable/ic_arrow_down_white"-->
+<!--            android:contentDescription="@null"-->
+<!--            android:scaleX="2"-->
+<!--            android:scaleY="2"-->
+<!--            android:rotation="180"-->
+<!--            android:elevation="16dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/rv_items"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            />-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/white"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="16dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <coder.giz.android.yfui.imageview.RoundedImageView
+                    android:id="@+id/iv_account_avatar"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/avatar"
+                    android:background="@drawable/bg_round_corner_32"
+                    android:elevation="4dp"
+                    app:riv_type="circle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tv_account_username"
+                    />
+
+                <TextView
+                    style="@style/YFUi.Widget.TextView.SubTitle2"
+                    android:id="@+id/tv_account_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tv_account_email"
+                    tools:text="账号名"
+                    />
+
+                <TextView
+                    style="@style/YFUi.Widget.TextView.SubTitle2"
+                    android:id="@+id/tv_account_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/ll_buttons"
+                    tools:text="邮箱"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_buttons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_delete_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="32dp"
+                        android:paddingVertical="8dp"
+                        android:text="删除"
+                        android:textSize="12sp"
+                        android:textColor="@color/error_normal"
+                        android:background="@drawable/bg_text_button_white"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_switch_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="32dp"
+                        android:paddingVertical="8dp"
+                        android:text="切换"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_text_button_blue"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GAndroidJourney">
         <activity
+            android:name=".practice.androidcodelab.AndroidCodeLabKotlinCoroutinesDemo1Activity"
+            android:exported="false" />
+        <activity
             android:name=".KotlinCoroutinesDemoActivity"
             android:exported="true">
             <intent-filter>
@@ -18,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".practice.series1.Series1Demo1Activity" />
+        <activity
+            android:name=".practice.series1.Series1Demo2Activity"
+            android:exported="false" />
     </application>
 
 </manifest>

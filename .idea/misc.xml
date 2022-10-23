@@ -107,6 +107,9 @@
         <entry key="..\:/AndroidProjects/GAndroidJourney/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26458333333333334" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/bottomsheet/src/main/res/drawable/bg_round_corner_32.xml" value="0.1405" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/bottomsheet/src/main/res/drawable/bg_top_round_corner_16.xml" value="0.21296296296296297" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/kotlin-coroutines-demo/src/main/res/layout/activity_kotlin_coroutines_demo.xml" value="0.125" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/kotlin-coroutines-demo/src/main/res/layout/activity_series1_demo1.xml" value="0.1486111111111111" />
+        <entry key="..\:/AndroidProjects/GAndroidJourney/kotlin-coroutines-demo/src/main/res/layout/activity_series1_demo2.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/network/src/main/res/layout/activity_behavior_subject_practice.xml" value="0.1597222222222222" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/network/src/main/res/layout/activity_network_main.xml" value="0.15486111111111112" />
         <entry key="..\:/AndroidProjects/GAndroidJourney/playground/src/main/res/layout/activity_auto_off_demo.xml" value="0.1" />

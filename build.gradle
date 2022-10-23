@@ -1,7 +1,99 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.6.21"
     ext.hilt_version = "2.38.1"
+
+    ext {
+        // def定义的变量只能本脚本使用。没有def定义的变量其他build.gradle脚本才能引用
+
+        // global variables
+        kotlin_version = '1.6.21'
+        kotlin_coroutines_version = "1.6.4"
+
+        // local variables (use def)
+        androidx_test_version = '1.4.0'
+        arch_version = '2.1.0'
+        androidx_appcompat_version = "1.4.1"
+        androidx_constraintlayout_version = '2.1.3'
+        androidx_core_ktx_version = "1.3.2"
+        androidx_fragment_ktx_version = "1.3.2"
+        espresso_version = '3.4.0'
+        gson_version = '2.9.0'
+        junit_version = '4.13.2'
+        lifecycle_version = '2.4.1'
+        google_android_material_version = '1.5.0'
+        mockito_version = "4.3.1"
+        retrofit_gson_version = '2.9.0'
+        retrofit_version = '2.9.0'
+        truth_version = '1.1.3'
+        room_version = '2.4.1'
+        work_version = '2.7.1'
+        rxjava_version = "2.2.21"
+
+        libraries = [
+                // Coroutines
+                "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version",
+                "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version",
+
+                // Android UI and appcompat
+                "androidx.appcompat:appcompat:$androidx_appcompat_version",
+                "com.google.android.material:material:$google_android_material_version",
+                "androidx.constraintlayout:constraintlayout:$androidx_constraintlayout_version",
+
+                // ViewModel and LiveData
+                "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+
+                "androidx.work:work-runtime-ktx:$work_version",
+
+                // Room for database
+                "androidx.room:room-ktx:$room_version",
+
+                // network & serialization
+                "com.google.code.gson:gson:$gson_version",
+                "com.squareup.retrofit2:converter-gson:$retrofit_gson_version",
+                "com.squareup.retrofit2:retrofit:$retrofit_version",
+        ]
+
+        librariesKapt = [
+                "androidx.room:room-compiler:$room_version",
+        ]
+
+        librariesDebug = [
+                "com.google.truth:truth:$truth_version",
+        ]
+
+        testLibraries = [
+                "junit:junit:$junit_version",
+
+                // Coroutines testing
+                "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_coroutines_version",
+
+                // mocks
+                "org.mockito:mockito-core:$mockito_version",
+
+                //  Architecture Components testing libraries
+                "androidx.arch.core:core-testing:$arch_version"
+        ]
+
+        androidTestLibraries = [
+                "junit:junit:$junit_version",
+                "androidx.test:runner:$androidx_test_version",
+                "androidx.test:rules:$androidx_test_version",
+
+                // Espresso
+                "androidx.test.espresso:espresso-core:$espresso_version",
+                "androidx.test.espresso:espresso-contrib:$espresso_version",
+                "androidx.test.espresso:espresso-intents:$espresso_version",
+
+                //  Architecture Components testing libraries
+                "androidx.arch.core:core-testing:$arch_version",
+                "androidx.work:work-testing:$work_version",
+
+                // Coroutines testing
+                "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_coroutines_version",
+        ]
+    }
+
     repositories {
         google()
         mavenCentral()
@@ -14,17 +106,6 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-}
-
-ext {
-    androidx_core_ktx_version = "1.3.2"
-    androidx_fragment_ktx_version = "1.3.2"
-    androidx_appcompat_version = "1.2.0"
-    androidx_constraintlayout_version = "2.0.4"
-    google_android_material_version = "1.3.0"
-    retrofit_version = "2.9.0"
-    rxjava_version = "2.2.21"
-    kotlin_coroutines_version = "1.6.4"
 }
 
 task clean(type: Delete) {

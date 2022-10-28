@@ -18,14 +18,20 @@ abstract class KoroutineDataBindingBaseActivity<VDB: ViewDataBinding> : DataBind
 
     protected fun String.appendThreadInfo() = "$this | Thread[Name: $threadName]"
 
-    protected fun logThread(tag: String = "") {
-        Log.e("Thread", "Thread Name: ${Thread.currentThread().name} - Tag: $tag")
+    protected fun logThreadInfo(tag: String = "") {
+        Log.e("ThreadInfo", "Thread Name: ${Thread.currentThread().name} - Tag: $tag")
     }
 
     protected fun logcat(tag: String, msg: String) {
         lifecycleScope.launch {
             // lifecycleScope运行在主线程
             mLogcatScrollView?.logcat(tag, msg)
+        }
+    }
+    protected fun logcat(msg: String) {
+        lifecycleScope.launch {
+            // lifecycleScope运行在主线程
+            mLogcatScrollView?.logcat("", msg)
         }
     }
 

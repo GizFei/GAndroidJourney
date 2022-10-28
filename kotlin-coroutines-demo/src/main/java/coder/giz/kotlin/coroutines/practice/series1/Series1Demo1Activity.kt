@@ -7,6 +7,7 @@ import coder.giz.kotlin.coroutines.widget.LogcatScrollView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
@@ -39,6 +40,18 @@ class Series1Demo1Activity : KoroutineDataBindingBaseActivity<ActivitySeries1Dem
         }
         mBinding.btnStartInDiffDispatcher.setOnClickListener {
             startCoroutineInDifferentDispatcher()
+        }
+        mBinding.btnExecuteMultiSuspendFun.setOnClickListener {
+            executeMultiSuspendFunInCoroutine()
+        }
+        mBinding.btnExecuteMultiSuspendFun2.setOnClickListener {
+            executeMultiSuspendFunInCoroutine2()
+        }
+        mBinding.btnExecuteMultiSuspendFunWithReturn.setOnClickListener {
+            executeMultiSuspendFunWithReturnValueInCoroutine()
+        }
+        mBinding.btnExecuteMultiSuspendFunWithReturn2.setOnClickListener {
+            executeMultiSuspendFunWithReturnValueInCoroutine2()
         }
     }
 
@@ -143,10 +156,110 @@ class Series1Demo1Activity : KoroutineDataBindingBaseActivity<ActivitySeries1Dem
                             logcat("launch$i", "启动一个协程")
                         }
                     }
-
                 }
             }.join()
         }
+    }
+
+    private fun executeMultiSuspendFunInCoroutine() {
+        logThreadInfo("executeMultiSuspendFunInCoroutine out launch")
+        GlobalScope.launch {
+            logThreadInfo("executeMultiSuspendFunInCoroutine")
+            // 打印0，挂起，1秒后恢复
+            suspendLogcat(0)
+            // 上一个suspend函数恢复后。开始执行。打印1，挂起，1秒后恢复
+            suspendLogcat(1)
+            // 以此类推
+            suspendLogcat(2)
+            suspendLogcat(3)
+            suspendLogcat(4)
+        }
+    }
+
+    private fun executeMultiSuspendFunInCoroutine2() {
+        logThreadInfo("executeMultiSuspendFunInCoroutine out launch")
+        GlobalScope.launch {
+            // 五个launch，开启了5个子协程，同时运行。
+            launch {
+                logThreadInfo("executeMultiSuspendFunInCoroutine")
+                suspendLogcat(0)
+                // suspendLogcat挂起，1秒后恢复，继续执行剩余代码
+                logcat("after 0")
+            }
+            launch {
+                logThreadInfo("executeMultiSuspendFunInCoroutine")
+                suspendLogcat(1)
+                logcat("after 1")
+            }
+            launch {
+                logThreadInfo("executeMultiSuspendFunInCoroutine")
+                suspendLogcat(2)
+                logcat("after 2")
+            }
+            launch {
+                logThreadInfo("executeMultiSuspendFunInCoroutine")
+                suspendLogcat(3)
+                logcat("after 3")
+            }
+            launch {
+                logThreadInfo("executeMultiSuspendFunInCoroutine")
+                suspendLogcat(4)
+                logcat("after 4")
+            }
+        }
+    }
+
+    private suspend fun suspendLogcat(idx: Int) {
+        logcat("Suspend Fun", "Idx：$idx".appendThreadInfo())
+        delay(1000)
+        logcat("Suspend Fun", "After delay Idx：$idx".appendThreadInfo())
+    }
+
+    /**
+     * 日志输出：
+     * 2022-10-23 13:16:21.642 W/: Suspend Fun return value 0 | Thread[Name: DefaultDispatcher-worker-1]
+     * 2022-10-23 13:16:22.644 W/: Suspend Fun return value 1 | Thread[Name: DefaultDispatcher-worker-1]
+     * 2022-10-23 13:16:23.645 W/Suspend Fun Result: res1: Idx: 0, res2: Idx: 1
+     */
+    private fun executeMultiSuspendFunWithReturnValueInCoroutine() {
+        GlobalScope.launch {
+            // 执行，挂起，1秒后恢复。返回结果。
+            val res1 = suspendReturnValue(0)
+            // 上一个suspend方法恢复后，开始执行，挂起，1秒后恢复，返回结果。
+            val res2 = suspendReturnValue(1)
+            // 2秒后，上面两个结果返回，打印日志
+            logcat("Suspend Fun Result", "res1: $res1, res2: $res2")
+        }
+    }
+
+    /**
+     * 2022-10-23 13:27:40.847 W/: Suspend Fun return value 0 | Thread[Name: DefaultDispatcher-worker-2]
+     * 2022-10-23 13:27:40.848 W/: Suspend Fun return value 1 | Thread[Name: DefaultDispatcher-worker-3]
+     * 2022-10-23 13:27:41.850 W/Suspend Fun Result: res1: Idx: 0
+     * 2022-10-23 13:27:41.851 W/Suspend Fun Result: res2: Idx: 1
+     * 2022-10-23 13:27:41.852 W/Suspend Fun Result: res1: Idx: 0, res2: Idx: 1
+     */
+    private fun executeMultiSuspendFunWithReturnValueInCoroutine2() {
+        GlobalScope.launch {
+            // 执行，挂起，1秒后恢复。返回结果。
+            val res1 = async {
+                suspendReturnValue(0)
+            }
+            // 上一个suspend方法恢复后，开始执行，挂起，1秒后恢复，返回结果。
+            val res2 = async {
+                suspendReturnValue(1)
+            }
+            // 2秒后，上面两个结果返回，打印日志
+            logcat("Suspend Fun Result", "res1: ${res1.await()}")
+            logcat("Suspend Fun Result", "res2: ${res2.await()}")
+            logcat("Suspend Fun Result", "res1: ${res1.await()}, res2: ${res2.await()}")
+        }
+    }
+
+    private suspend fun suspendReturnValue(idx: Int): String {
+        logcat("Suspend Fun return value $idx".appendThreadInfo())
+        delay(1000)
+        return "Idx: $idx"
     }
 
 //    private fun logcat(tag: String, msg: String) {

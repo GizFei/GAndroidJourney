@@ -51,6 +51,11 @@ class TitleDaoFake(initialTitle: String) : TitleDao {
         _titleLiveData.value = title
     }
 
+    override suspend fun insertTitleSuspend(title: Title) {
+        insertedForNext.trySend(title)
+        _titleLiveData.value = title
+    }
+
     private val _titleLiveData = MutableLiveData<Title?>(Title(initialTitle))
 
     override val titleLiveData: LiveData<Title?>
@@ -93,6 +98,10 @@ class TitleDaoFake(initialTitle: String) : TitleDao {
  */
 class MainNetworkFake(var result: String) : MainNetwork {
     override fun fetchNextTitle() = MakeCompilerHappyForStarterCode() // TODO: replace with `result`
+
+    override suspend fun fetchNextTitleSuspend(): String {
+        return result
+    }
 }
 
 /**
@@ -102,6 +111,10 @@ class MainNetworkCompletableFake() : MainNetwork {
     private var completable = CompletableDeferred<String>()
 
     override fun fetchNextTitle() = MakeCompilerHappyForStarterCode() // TODO: replace with `completable.await()`
+
+    override suspend fun fetchNextTitleSuspend(): String {
+        return ""
+    }
 
     fun sendCompletionToAllCurrentRequests(result: String) {
         completable.complete(result)

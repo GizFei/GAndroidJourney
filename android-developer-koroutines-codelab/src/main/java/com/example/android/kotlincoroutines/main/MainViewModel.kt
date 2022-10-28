@@ -19,8 +19,12 @@ package com.example.android.kotlincoroutines.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android.kotlincoroutines.util.BACKGROUND
+import androidx.lifecycle.viewModelScope
+import com.example.android.kotlincoroutines.util.appendThreadInfo
 import com.example.android.kotlincoroutines.util.singleArgViewModelFactory
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 /**
  * MainViewModel designed to store and manage UI-related data in a lifecycle conscious way. This
@@ -93,7 +97,8 @@ class MainViewModel(private val repository: TitleRepository) : ViewModel() {
      * a snackbar.
      */
     fun onMainViewClicked() {
-        refreshTitle()
+//        refreshTitle()
+        refreshTitle2()
         updateTaps()
     }
 
@@ -102,10 +107,19 @@ class MainViewModel(private val repository: TitleRepository) : ViewModel() {
      */
     private fun updateTaps() {
         // TODO: Convert updateTaps to use coroutines
-        tapCount++
-        BACKGROUND.submit {
-            Thread.sleep(1_000)
-            _taps.postValue("${tapCount} taps")
+        // 后台线程版：
+//        tapCount++
+//        BACKGROUND.submit {
+//            Thread.sleep(1_000)
+//            _taps.postValue("${tapCount} taps")
+//        }
+
+        // 协程版：
+        viewModelScope.launch {
+            tapCount++
+            // suspend this coroutine for one second
+            delay(5_000)
+            _taps.value = "$tapCount taps".appendThreadInfo()
         }
     }
 
@@ -121,16 +135,50 @@ class MainViewModel(private val repository: TitleRepository) : ViewModel() {
      */
     fun refreshTitle() {
         // TODO: Convert refreshTitle to use coroutines
-        _spinner.value = true
-        repository.refreshTitleWithCallbacks(object : TitleRefreshCallback {
-            override fun onCompleted() {
-                _spinner.postValue(false)
+        // 回调版本：
+//        _spinner.value = true
+//        repository.refreshTitleWithCallbacks(object : TitleRefreshCallback {
+//            override fun onCompleted() {
+//                _spinner.postValue(false)
+//            }
+//
+//            override fun onError(cause: Throwable) {
+//                _snackBar.postValue(cause.message)
+//                _spinner.postValue(false)
+//            }
+//        })
+        // 协程版本：
+        viewModelScope.launch {
+            try {
+                _spinner.value = true
+                repository.refreshTitleFinalVersion()
+            } catch (error: TitleRefreshError) {
+                _snackBar.value = error.message
+            } finally {
+                _spinner.value = false
             }
+        }
+    }
 
-            override fun onError(cause: Throwable) {
-                _snackBar.postValue(cause.message)
-                _spinner.postValue(false)
+    fun refreshTitle2() {
+        launchLoadData {
+            repository.refreshTitleFinalVersion()
+        }
+    }
+
+    /**
+     * 抽象出“spinner显示和消失”的通用样板代码。
+     */
+    fun launchLoadData(block: suspend () -> Unit): Job {
+        return viewModelScope.launch {
+            try {
+                _spinner.value = true
+                block()
+            } catch (error: TitleRefreshError) {
+                _snackBar.value = error.message
+            } finally {
+                _spinner.value = false
             }
-        })
+        }
     }
 }

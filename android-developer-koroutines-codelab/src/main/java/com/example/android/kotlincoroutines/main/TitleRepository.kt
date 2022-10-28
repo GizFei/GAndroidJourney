@@ -18,7 +18,11 @@ package com.example.android.kotlincoroutines.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
+import coder.giz.android.yfutility.util.YFLog
 import com.example.android.kotlincoroutines.util.BACKGROUND
+import com.example.android.kotlincoroutines.util.appendThreadInfo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * TitleRepository provides an interface to fetch a title or request a new one be generated.
@@ -29,6 +33,10 @@ import com.example.android.kotlincoroutines.util.BACKGROUND
  * sources, in our case it mediates between a network API and an offline database cache.
  */
 class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
+
+    companion object {
+        private const val TAG = "TitleRepository"
+    }
 
     /**
      * [LiveData] to load title.
@@ -43,6 +51,56 @@ class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
 
 
     // TODO: Add coroutines-based `fun refreshTitle` here
+    suspend fun refreshTitle() {
+        // TODO: Refresh from network and write to database
+        YFLog.w(TAG, "refreshTitle".appendThreadInfo())
+//        delay(1000)
+        // interact with *blocking* network and IO calls from a coroutine
+        // 切换到IO线程进行操作
+        withContext(Dispatchers.IO) {
+            // 切换到IO线程创建协程
+            val result = try {
+                YFLog.w(TAG, "network.fetchNextTitle().execute()".appendThreadInfo())
+                // Make network request using a blocking call
+                // 调用阻塞线程的网络请求
+                network.fetchNextTitle().execute()
+            } catch (cause: Throwable) {
+                // If the network throws an exception, inform the caller
+                throw TitleRefreshError("Unable to refresh title", cause)
+            }
+
+            YFLog.w(TAG, "network result return.".appendThreadInfo())
+
+            if (result.isSuccessful) {
+                // Save it to database
+                // 调用阻塞线程的数据库方法
+                YFLog.w(TAG, "titleDao.insertTitle".appendThreadInfo())
+                titleDao.insertTitleSuspend(Title(result.body()!!))
+            } else {
+                // If it's not successful, inform the callback of the error
+                throw TitleRefreshError("Unable to refresh title", null)
+            }
+        }
+    }
+
+    /**
+     * 协程改造的终极版本。
+     */
+    suspend fun refreshTitleFinalVersion() {
+        // TODO: Refresh from network and write to database
+        YFLog.w(TAG, "refreshTitle".appendThreadInfo())
+        try {
+            // 以下两个suspend函数内部已经自动切换调度器执行，所以不需要在这里withContext
+            YFLog.w(TAG, "network.fetchNextTitleSuspend".appendThreadInfo())
+            val result = network.fetchNextTitleSuspend()
+            YFLog.w(TAG, "titleDao.insertTitleSuspend".appendThreadInfo())
+            titleDao.insertTitleSuspend(Title(result))
+        } catch (cause: Throwable) {
+            // If anything throws an exception, inform the caller
+            YFLog.w(TAG, "refreshTitleFinalVersion error: $cause ".appendThreadInfo())
+            throw TitleRefreshError("Unable to refresh title", cause)
+        }
+    }
 
     /**
      * Refresh the current title and save the results to the offline cache.
@@ -58,7 +116,9 @@ class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
                 val result = network.fetchNextTitle().execute()
                 if (result.isSuccessful) {
                     // Save it to database
-                    titleDao.insertTitle(Title(result.body()!!))
+                    val resultBody = result.body()!!
+                    YFLog.d(resultBody)
+                    titleDao.insertTitle(Title(resultBody))
                     // Inform the caller the refresh is completed
                     titleRefreshCallback.onCompleted()
                 } else {

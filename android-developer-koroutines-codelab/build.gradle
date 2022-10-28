@@ -21,11 +21,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion ANDROID_COMPILE_SDK_VERSION as int
     defaultConfig {
         applicationId "com.example.android.kotlincoroutines"
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdkVersion ANDROID_MIN_SDK_VERSION as int
+        targetSdkVersion ANDROID_TARGET_SDK_VERSION as int
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,6 +55,9 @@ dependencies {
     implementation libraries
     kapt librariesKapt
     debugImplementation librariesDebug
+
+    implementation project(":yfutility")
+    implementation project(":yfui")
 
     testImplementation testLibraries
     androidTestImplementation androidTestLibraries

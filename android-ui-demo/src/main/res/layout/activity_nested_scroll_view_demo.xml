@@ -26,9 +26,9 @@
                     <com.google.android.material.appbar.CollapsingToolbarLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="200dp"
+                        app:minHeight="100dp"
                         app:collapsedTitleGravity="center_horizontal"
-                        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed"
                         >
 
 <!--                        <LinearLayout-->
@@ -46,8 +46,7 @@
 
                             <androidx.appcompat.widget.Toolbar
                                 android:layout_width="match_parent"
-                                android:layout_height="200dp"
-                                android:minHeight="200dp"
+                                android:layout_height="wrap_content"
                                 app:layout_collapseMode="pin"
                                 app:title="hello"
                                 app:popupTheme="@style/Theme.GAndroidJourney.PopupOverlay"

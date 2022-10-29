@@ -21,6 +21,8 @@ abstract class DataBindingBaseActivity<VDB: ViewDataBinding> : BaseActivity() {
         mBinding = DataBindingUtil.setContentView(this, getLayoutId())
         initDataBinding()
         initView()
+        subscribeToViewModel()
+        loadDataOnce()
     }
 
     @LayoutRes
@@ -32,5 +34,9 @@ abstract class DataBindingBaseActivity<VDB: ViewDataBinding> : BaseActivity() {
     }
 
     abstract fun initView()
+
+    open fun subscribeToViewModel() {}
+
+    open fun loadDataOnce() {}
 
 }

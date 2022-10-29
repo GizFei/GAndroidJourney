@@ -19,6 +19,9 @@ import coder.giz.android.yfutility.navigation.HeaderNavItem
  */
 internal object DataGenerator {
     val AndroidUiDemoNavItems = listOf(
+        HeaderNavItem("NestedScroll"),
+        ActivityNavItem("NestedScrollViewDemo", "嵌套滑动", NestedScrollViewDemoActivity::class),
+
         HeaderNavItem("Widget"),
         ActivityNavItem("PopupWindow", "PopupWindow使用", PopupWindowDemoActivity::class),
         ActivityNavItem("ExpandableListView", "ExpandableListView使用", ExpandableListViewDemoActivity::class),
@@ -39,9 +42,6 @@ internal object DataGenerator {
 
         HeaderNavItem("Animation"),
         ActivityNavItem("ShakeAnimationDemo", "摇动动画测试页面", ShakeAnimationDemoActivity::class),
-
-        HeaderNavItem("NestedScroll"),
-        ActivityNavItem("NestedScrollViewDemo", "嵌套滑动", NestedScrollViewDemoActivity::class),
 
         HeaderNavItem("ViewPager"),
         ActivityNavItem("ViewPager2Demo", "ViewPager2示例", ViewPager2DemoActivity::class),

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.lifecycle.LiveData" />
+        <variable
+            name="isLoading"
+            type="LiveData&lt;Boolean>" />
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:id="@+id/btn_fetch"
+            style="@style/YFUi.Widget.Button.Solid.Info.FullWidth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="请求"
+            android:onClick="@{onClickListener}"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{isLoading}"
+            tools:visibility="gone"
+            >
+
+            <ProgressBar
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="32dp"
+                android:indeterminateTint="@color/white"
+                android:background="@drawable/bg_round_corner_16"
+                android:backgroundTint="#66000000"
+                />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>

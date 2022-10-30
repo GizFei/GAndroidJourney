@@ -3,7 +3,7 @@ package coder.giz.android.uidemo.helper
 import coder.giz.android.uidemo.animation.attention.ShakeAnimationDemoActivity
 import coder.giz.android.uidemo.expandablelistview.ExpandableListViewDemoActivity
 import coder.giz.android.uidemo.floatingwindow.FloatingWindowDemoActivity
-import coder.giz.android.uidemo.nestedscroll.NestedScrollViewDemoActivity
+import coder.giz.android.uidemo.nestedscroll.ThreeLevelNestedScrollViewDemoActivity
 import coder.giz.android.uidemo.playground.UiPlaygroundActivity
 import coder.giz.android.uidemo.popupwindow.PopupWindowDemoActivity
 import coder.giz.android.uidemo.recyclerview.DraggableRecyclerViewActivity
@@ -20,7 +20,7 @@ import coder.giz.android.yfutility.navigation.HeaderNavItem
 internal object DataGenerator {
     val AndroidUiDemoNavItems = listOf(
         HeaderNavItem("NestedScroll"),
-        ActivityNavItem("NestedScrollViewDemo", "嵌套滑动", NestedScrollViewDemoActivity::class),
+        ActivityNavItem("NestedScrollViewDemo", "嵌套滑动", ThreeLevelNestedScrollViewDemoActivity::class),
 
         HeaderNavItem("Widget"),
         ActivityNavItem("PopupWindow", "PopupWindow使用", PopupWindowDemoActivity::class),

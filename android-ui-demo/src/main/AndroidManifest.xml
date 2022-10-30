@@ -46,7 +46,7 @@
             />
         <activity android:name=".animation.attention.ShakeAnimationDemoActivity"
             />
-        <activity android:name=".nestedscroll.NestedScrollViewDemoActivity"
+        <activity android:name=".nestedscroll.ThreeLevelNestedScrollViewDemoActivity"
             />
         <activity android:name=".viewpager.ViewPager2DemoActivity"
             />

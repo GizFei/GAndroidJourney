@@ -10,9 +10,11 @@ import coder.giz.android.yfui.base.DataBindingBaseActivity
 import coder.giz.android.yfutility.util.dp2px
 
 /**
+ * 三级嵌套滑动。
+ *
  * Created by GizFei on 2022/8/28
  */
-class NestedScrollViewDemoActivity : DataBindingBaseActivity<ActivityNestedScrollViewDemoBinding>() {
+class ThreeLevelNestedScrollViewDemoActivity : DataBindingBaseActivity<ActivityNestedScrollViewDemoBinding>() {
 
     override fun getLayoutId(): Int = R.layout.activity_nested_scroll_view_demo
 
@@ -21,9 +23,23 @@ class NestedScrollViewDemoActivity : DataBindingBaseActivity<ActivityNestedScrol
             adapter = GridCardAdapter()
             addItemDecoration(ItemDecoration())
         }
-//        mBinding.recyclerViewHorizontal.run {
-//            adapter = GridCardAdapter()
-//        }
+        mBinding.recyclerViewHorizontal.run {
+            adapter = HorizontalGridCardAdapter()
+            addItemDecoration(ItemDecoration())
+        }
+        mBinding.btnCollapse.setOnClickListener {
+            mBinding.headerLayout.collapse()
+        }
+        mBinding.btnExpand.setOnClickListener {
+            mBinding.headerLayout.expand()
+        }
+        mBinding.btnTextLen.setOnClickListener {
+            mBinding.scanningLayout.changeTextLength()
+        }
+        mBinding.scanningLayout.post {
+            // 更新滑动偏移量
+            mBinding.headerLayout.updateHeaderScrollOffset(mBinding.scanningLayout.calcScrollOffsetY())
+        }
     }
 
     private class ItemDecoration : RecyclerView.ItemDecoration() {

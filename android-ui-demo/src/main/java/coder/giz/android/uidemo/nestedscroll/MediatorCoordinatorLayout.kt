@@ -113,7 +113,14 @@ class MediatorCoordinatorLayout @JvmOverloads constructor(
     }
 
     override fun onStopNestedScroll(target: View, type: Int) {
+        // 作为父视图，停止嵌套滑动。
         super.onStopNestedScroll(target, type)
+        // 作为子视图，停止嵌套滑动
+        stopNestedScroll(type)
+    }
+
+    override fun onNestedPreFling(target: View, velocityX: Float, velocityY: Float): Boolean {
+        return super.onNestedPreFling(target, velocityX, velocityY)
     }
 
     // endregion

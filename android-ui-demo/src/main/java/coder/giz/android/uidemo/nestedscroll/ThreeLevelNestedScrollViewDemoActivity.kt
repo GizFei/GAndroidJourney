@@ -7,7 +7,11 @@ import coder.giz.android.uidemo.R
 import coder.giz.android.uidemo.databinding.ActivityNestedScrollViewDemoBinding
 import coder.giz.android.uidemo.recyclerview.GridCardAdapter
 import coder.giz.android.yfui.base.DataBindingBaseActivity
+import coder.giz.android.yfutility.util.YFLog
 import coder.giz.android.yfutility.util.dp2px
+import com.google.android.material.appbar.AppBarLayout
+import kotlin.math.abs
+import kotlin.random.Random
 
 /**
  * 三级嵌套滑动。
@@ -36,10 +40,41 @@ class ThreeLevelNestedScrollViewDemoActivity : DataBindingBaseActivity<ActivityN
         mBinding.btnTextLen.setOnClickListener {
             mBinding.scanningLayout.changeTextLength()
         }
+        mBinding.btnRvSize.setOnClickListener {
+            toggleRecyclerViewSize()
+        }
+        mBinding.btnCountView.setOnClickListener {
+            toggleCountView()
+        }
         mBinding.scanningLayout.post {
             // 更新滑动偏移量
             mBinding.headerLayout.updateHeaderScrollOffset(mBinding.scanningLayout.calcScrollOffsetY())
         }
+
+        val appBarLayout: AppBarLayout = mBinding.appBarLayout
+        appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { _, verticalOffset ->
+            // 超过一半距离，则显示数字。
+            YFLog.d("ThreeLevelNestedScrollViewDemoActivity", "offset: $verticalOffset")
+
+            val showCount = abs(verticalOffset) > appBarLayout.totalScrollRange / 2
+            mBinding.scanningLayout.updateCountViewVisibility(showCount)
+        })
+    }
+
+    private fun toggleRecyclerViewSize() {
+        val size = if (Random.nextBoolean()) 4 else 0
+        mBinding.recyclerViewHorizontal.adapter = HorizontalGridCardAdapter(size)
+        if (size == 0) {
+            mBinding.headerLayout.setHeaderScrollEnabled(true, true)
+        } else {
+            mBinding.headerLayout.setHeaderScrollEnabled(false, false)
+        }
+    }
+
+    private var mIsCountViewShown = false
+    private fun toggleCountView() {
+        mIsCountViewShown = !mIsCountViewShown
+        mBinding.scanningLayout.updateCountViewVisibility(mIsCountViewShown)
     }
 
     private class ItemDecoration : RecyclerView.ItemDecoration() {

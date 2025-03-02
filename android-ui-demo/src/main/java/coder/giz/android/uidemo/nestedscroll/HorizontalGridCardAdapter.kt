@@ -13,7 +13,7 @@ import coder.giz.android.yfutility.util.dp2px
 /**
  * Created by GizFei on 2022/7/19
  */
-class HorizontalGridCardAdapter : RecyclerView.Adapter<HorizontalGridCardAdapter.GridCardViewHolder>() {
+class HorizontalGridCardAdapter(val size: Int = 100) : RecyclerView.Adapter<HorizontalGridCardAdapter.GridCardViewHolder>() {
 
 //    var mItemTouchCallback: GridCardItemCallback? = null
 
@@ -23,7 +23,7 @@ class HorizontalGridCardAdapter : RecyclerView.Adapter<HorizontalGridCardAdapter
         addAll(DataGenerator.CompanyProductMap.toList())
         addAll(DataGenerator.CompanyProductMap.toList())
         addAll(DataGenerator.CompanyProductMap.toList())
-    }.toMutableList()
+    }.take(size).toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridCardViewHolder {
         val binding: ItemDebugInfoCardBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),

@@ -1,30 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
+        android:background="@color/led_green"
         >
 
-        <ImageView
-            android:id="@+id/iv_icon"
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_icon"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:layout_marginTop="48dp"-->
+<!--            android:src="@drawable/ic_baseline_refresh_24"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            />-->
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="48dp"
             android:src="@drawable/ic_baseline_refresh_24"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
 
-        <TextView
+        <coder.giz.android.uidemo.nestedscroll.MyTextView
             android:id="@+id/tv_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,12 +52,36 @@
             android:textColor="@color/black"
             android:text="Scanning nearby devices"
             android:gravity="center"
+            android:background="@color/led_blue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_icon"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constrainedWidth="true"
             />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:background="@drawable/bg_round_corner_16"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="5"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constrainedWidth="true"
+            tools:visibility="visible"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

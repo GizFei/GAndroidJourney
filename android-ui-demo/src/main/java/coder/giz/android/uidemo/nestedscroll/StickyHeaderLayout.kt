@@ -34,6 +34,9 @@ class StickyHeaderLayout @JvmOverloads constructor(
      */
     private var mScrollOffsetY = 0
     private var mOffsetAnimator: ValueAnimator? = null
+    private var mIsHeaderExpanded = true
+
+    private var mIsHeaderScrollEnabled = true
 
     init {
         orientation = VERTICAL
@@ -72,7 +75,30 @@ class StickyHeaderLayout @JvmOverloads constructor(
     }
 
     override fun onStopNestedScroll(target: View, type: Int) {
+        log { "onStopNestedScroll" }
         mNestedScrollingParentHelper.onStopNestedScroll(target, type)
+        moveToFinalState()
+    }
+
+    private fun moveToFinalState() {
+//        val toExpand = if (mIsHeaderExpanded) {
+//            mScrollOffsetY < mHeaderScrollOffset * 0.2f
+//        } else {
+//            mScrollOffsetY < mHeaderScrollOffset * 0.8f
+//        }
+        val toExpand = mScrollOffsetY < mHeaderScrollOffset / 2
+        log { "moveToFinalState: curOffset $mScrollOffsetY maxOffset $mHeaderScrollOffset toExpand: $toExpand" }
+        moveToState(toExpand)
+    }
+
+    private fun moveToState(toExpand: Boolean) {
+        if (toExpand) {
+            mIsHeaderExpanded = true
+            animateToOffset(0)
+        } else {
+            mIsHeaderExpanded = false
+            animateToOffset(mHeaderScrollOffset)
+        }
     }
 
     override fun onNestedScroll(
@@ -127,19 +153,31 @@ class StickyHeaderLayout @JvmOverloads constructor(
             }
         }
 
-        handle()
+        if (mIsHeaderScrollEnabled) {
+            handle()
+        } else {
+            consumed[1] = 0
+        }
     }
 
     private fun scrollOffsetYBy(dy: Int) {
+        if (!mIsHeaderScrollEnabled) {
+            return
+        }
+
         scrollBy(0, dy)
         mScrollOffsetY += dy
-        mHeaderView?.move(mScrollOffsetY)
+        mHeaderView?.updateOffset(mScrollOffsetY)
     }
 
     private fun scrollOffsetYTo(offset: Int) {
+//        if (!mIsHeaderScrollEnabled) {
+//            return
+//        }
+
         scrollTo(0, offset)
         mScrollOffsetY = offset
-        mHeaderView?.move(mScrollOffsetY)
+        mHeaderView?.updateOffset(mScrollOffsetY)
     }
 
     override fun onNestedPreFling(target: View, velocityX: Float, velocityY: Float): Boolean {
@@ -170,6 +208,10 @@ class StickyHeaderLayout @JvmOverloads constructor(
 
     @SuppressLint("Recycle")
     private fun animateToOffset(offset: Int) {
+//        if (!mIsHeaderScrollEnabled) {
+//            return
+//        }
+
         val currentOffset = mScrollOffsetY
         val endOffset = max(0, min(offset, mHeaderScrollOffset))
         if (endOffset == currentOffset) {
@@ -184,7 +226,7 @@ class StickyHeaderLayout @JvmOverloads constructor(
         val offsetAnimator = mOffsetAnimator?.also { it.cancel() }
             ?: ValueAnimator().apply {
                 interpolator = DecelerateInterpolator()
-                addUpdateListener { it ->
+                addUpdateListener {
                     scrollOffsetYTo(it.animatedValue as Int)
                 }
             }
@@ -201,6 +243,14 @@ class StickyHeaderLayout @JvmOverloads constructor(
             mHeaderScrollOffset = offset
             requestLayout()
         }
+    }
+
+    /**
+     * 设置头视图是否允许滑动。
+     */
+    fun setHeaderScrollEnabled(enabled: Boolean, expanded: Boolean) {
+        mIsHeaderScrollEnabled = enabled
+        moveToState(expanded)
     }
 
     private inline fun log(msg: () -> String) {

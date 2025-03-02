@@ -14,7 +14,7 @@ import coder.giz.android.yfutility.util.dp2px
 /**
  * Created by GizFei on 2022/7/19
  */
-class GridCardAdapter : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>() {
+class GridCardAdapter(val size: Int = 100) : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>() {
 
     var mItemTouchCallback: GridCardItemCallback? = null
 
@@ -24,7 +24,7 @@ class GridCardAdapter : RecyclerView.Adapter<GridCardAdapter.GridCardViewHolder>
         addAll(DataGenerator.CompanyProductMap.toList())
         addAll(DataGenerator.CompanyProductMap.toList())
         addAll(DataGenerator.CompanyProductMap.toList())
-    }.toMutableList()
+    }.take(size).toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridCardViewHolder {
         val binding: ItemDebugInfoCardBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
